@@ -13,16 +13,20 @@ function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export default function CameraRoll() {
-  const containerRef = useRef<HTMLDivElement>(null);
+type CameraRollProps = {
+  containerRef: React.RefObject<HTMLDivElement | null>;
+};
+
+export default function CameraRoll({ containerRef }: CameraRollProps) {
+  //const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    if (!containerRef.current) return;
+    if (!containerRef || !containerRef.current) return;
 
     const cols = containerRef.current.querySelectorAll(`.${styles.column}`);
 
     cols.forEach((col, i) => {
-      const duration = gsap.utils.random(60, 110);
+      const duration = gsap.utils.random(120, 220);
       //const distance = col.scrollHeight / 2;
       const distance = col.scrollHeight;
       gsap.to(col, {
@@ -39,25 +43,21 @@ export default function CameraRoll() {
     <div className={styles.cameraRoll} ref={containerRef}>
       {[...Array(columns)].map((_, i) => (
         <div className={styles.column} key={i}>
-          {[...Array(2)].map((_, j) => (
-            <div key={j}>
-              {[...Array(10)].map((_, k) => {
-                const index = getRandomInt(1, images);
-                return (
-                  <div className={styles.imageWrapper} key={`${j}-${k}`}>
-                    <Image
-                      alt="Camera Roll"
-                      src={`/images/camera_roll/${index}.jpg`}
-                      width={258 / 1.3}
-                      height={194 / 1.3}
-                      priority={false}
-                      style={{ marginTop: getRandomInt(160, 360) }}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          ))}
+          {[...Array(10)].map((_, k) => {
+            const index = getRandomInt(1, images);
+            return (
+              <div className={styles.imageWrapper} key={`${k}`}>
+                <Image
+                  alt="Camera Roll"
+                  src={`/images/camera_roll/${index}.jpg`}
+                  width={258 / 1.3}
+                  height={194 / 1.3}
+                  priority={false}
+                  style={{ marginTop: getRandomInt(160, 360) }}
+                />
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>
