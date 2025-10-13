@@ -9,8 +9,19 @@ import { useGSAP } from "@gsap/react";
 const images = 90;
 const columns = 4;
 
+const usedIndexes: number[] = [];
+
 function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getUniqueRandomInt(min: number, max: number, exclude: number[]) {
+  let rand = getRandomInt(min, max);
+  while (exclude.includes(rand)) {
+    rand = getRandomInt(min, max);
+  }
+  exclude.push(rand);
+  return rand;
 }
 
 type CameraRollProps = {
@@ -44,7 +55,7 @@ export default function CameraRoll({ containerRef }: CameraRollProps) {
       {[...Array(columns)].map((_, i) => (
         <div className={styles.column} key={i}>
           {[...Array(10)].map((_, k) => {
-            const index = getRandomInt(1, images);
+            const index = getUniqueRandomInt(1, images, usedIndexes);
             return (
               <div className={styles.imageWrapper} key={`${k}`}>
                 <Image
