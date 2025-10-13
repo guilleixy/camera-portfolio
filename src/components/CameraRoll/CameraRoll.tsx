@@ -21,21 +21,16 @@ export default function CameraRoll() {
 
     const cols = containerRef.current.querySelectorAll(`.${styles.column}`);
 
-    cols.forEach((col) => {
-      const totalHeight = col.scrollHeight / 2;
+    cols.forEach((col, i) => {
       const duration = gsap.utils.random(60, 110);
-
+      //const distance = col.scrollHeight / 2;
+      const distance = col.scrollHeight;
       gsap.to(col, {
-        y: `-=${totalHeight}`,
+        y: -distance,
         duration,
         ease: "none",
         repeat: -1,
-        modifiers: {
-          y: (y) => {
-            const num = parseFloat(y);
-            return (num % -totalHeight) + "px";
-          },
-        },
+        yoyo: false,
       });
     });
   }, []);
