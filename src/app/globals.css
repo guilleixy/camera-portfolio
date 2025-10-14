@@ -25,6 +25,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow-y: hidden;
+  height: 100dvh;
 }
 
 * {
