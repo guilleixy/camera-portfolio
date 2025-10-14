@@ -7,6 +7,26 @@
   flex-direction: column;
 }
 
+.cursor {
+  font-family: var(--font-clash-display);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  font-size: 1.1rem;
+  border-radius: 100%;
+  mix-blend-mode: difference;
+  color: white;
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  text-align: center;
+  border: solid 1px white;
+}
+
 .header button {
   background-color: transparent;
   border: none;
