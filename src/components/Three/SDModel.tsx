@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 export default function SDModel() {
   const { nodes, materials } = useGLTF("/models/sdtest1.glb");
   return (
-    <group rotation={[0, Math.PI / 2, 0]} scale={0.5} position={[0, -20, 0]}>
+    <group rotation={[Math.PI / 2, 0, 0]} scale={0.5} position={[0, -20, 0]}>
       {Object.values(nodes)
         .filter((node: any) => node.type === "Mesh")
         .map((mesh: any) => (

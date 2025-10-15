@@ -2,7 +2,8 @@
   background-color: transparent;
   height: 100dvh;
   width: 100dvw;
-  position: absolute;
+  position: absolute !important;
+  z-index: -1;
   top: 0;
   left: 0;
 }

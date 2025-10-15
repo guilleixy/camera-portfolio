@@ -9,6 +9,14 @@ import { Suspense } from "react";
 import CameraModel from "./CameraModel";
 import styles from "./Scene.module.css";
 import SDModel from "./SDModel";
+import { useFrame } from "@react-three/fiber";
+import { gsap } from "gsap";
+
+export function useGSAPFrame() {
+  useFrame(() => {
+    gsap.ticker.tick(); // 👈 sincroniza GSAP con el loop de R3F
+  });
+}
 
 export default function Scene() {
   return (
