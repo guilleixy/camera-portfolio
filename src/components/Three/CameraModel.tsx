@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { Mesh } from "three";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
+import { useFrame } from "@react-three/fiber";
 
 const CameraModel: React.FC = () => {
   const { nodes, materials } = useGLTF("/models/canontestcajita2.glb");
@@ -15,29 +16,38 @@ const CameraModel: React.FC = () => {
   const tapaRef = useRef<Mesh>(null);
   const lensInnenHuleRef = useRef<Mesh>(null);
 
-  const setRefs = useCameraModelStore((state) => state.setRefs);
+  useFrame(() => {
+    if (lens3Ref.current) {
+      lens3Ref.current.position.x += 0.1;
+      console.log("animating lens3");
+    } else {
+      console.log("lens3Ref is null");
+    }
+  });
 
-  useEffect(() => {
-    if (!nodes) return;
-
-    if (nodes.Lens_Vorhang) lensVorhangRef.current = nodes.Lens_Vorhang as Mesh;
-    if (nodes.Lens_3) lens3Ref.current = nodes.Lens_3 as Mesh;
-    if (nodes.Lens_2) lens2Ref.current = nodes.Lens_2 as Mesh;
-    if (nodes.Lens_Fenster) lensFensterRef.current = nodes.Lens_Fenster as Mesh;
-    if (nodes.Lens_Glass) lensGlassRef.current = nodes.Lens_Glass as Mesh;
-    if (nodes.Tapa) tapaRef.current = nodes.Tapa as Mesh;
-    if (nodes["Lens_Innen_Hüle"])
-      lensInnenHuleRef.current = nodes["Lens_Innen_Hüle"] as Mesh;
-    setRefs({
-      Lens_Vorhang: lensVorhangRef,
-      Lens_3: lens3Ref,
-      Lens_2: lens2Ref,
-      Lens_Fenster: lensFensterRef,
-      Lens_Glass: lensGlassRef,
-      Tapa: tapaRef,
-      Lens_Innen_Hüle: lensInnenHuleRef,
-    });
-  }, [nodes]);
+  const getRefForMesh = (meshName: string) => {
+    switch (meshName) {
+      case "Lens_Vorhang_1": // Cambiado de "Lens_Vorhang"
+      case "Lens_Vorhang_2":
+        return lensVorhangRef;
+      case "Lens_3_1": // Cambiado de "Lens_3"
+      case "Lens_3_2":
+        return lens3Ref;
+      case "Lens_2_1": // Cambiado de "Lens_2"
+      case "Lens_2_2":
+        return lens2Ref;
+      case "Lens_Fenster":
+        return lensFensterRef;
+      case "Lens_Glass":
+        return lensGlassRef;
+      case "Tapa":
+        return tapaRef;
+      case "Lens_Innen_Hüle":
+        return lensInnenHuleRef;
+      default:
+        return undefined;
+    }
+  };
 
   return (
     <group rotation={[0, 0, 0]} scale={0.5}>
@@ -45,30 +55,11 @@ const CameraModel: React.FC = () => {
         .filter((node: any) => node.type === "Mesh")
         .map((mesh: any) => {
           const meshName = mesh.name;
-          let ref: React.Ref<Mesh> | undefined;
-          switch (meshName) {
-            case "Lens_Vorhang":
-              ref = lensVorhangRef;
-              break;
-            case "Lens_3":
-              ref = lens3Ref;
-              break;
-            case "Lens_2":
-              ref = lens2Ref;
-              break;
-            case "Lens_Fenster":
-              ref = lensFensterRef;
-              break;
-            case "Lens_Glass":
-              ref = lensGlassRef;
-              break;
-            case "Tapa":
-              ref = tapaRef;
-              break;
-            case "Lens_Innen_Hüle":
-              ref = lensInnenHuleRef;
-              break;
-          }
+          const ref = getRefForMesh(meshName);
+
+          console.log(
+            `Rendering mesh: ${meshName}, has ref: ${ref !== undefined}`
+          );
 
           return (
             <mesh
@@ -81,9 +72,9 @@ const CameraModel: React.FC = () => {
                 Object.values(materials)[0]
               }
               castShadow
-              {...(mesh.position && { position: mesh.position })}
-              {...(mesh.rotation && { rotation: mesh.rotation })}
-              {...(mesh.scale && { scale: mesh.scale })}
+              position={mesh.position}
+              rotation={mesh.rotation}
+              scale={mesh.scale}
             />
           );
         })}
