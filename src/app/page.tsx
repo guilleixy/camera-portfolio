@@ -4,6 +4,8 @@ import CameraRoll from "@/components/CameraRoll/CameraRoll";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import Scene from "@/components/Three/Scene";
+import CameraControls from "@/components/Three/CameraControls";
+import RealCameraControls from "@/components/Three/RealCameraControls";
 
 export default function Home() {
   const [isWebStarted, setIsWebStarted] = useState(false);
@@ -70,6 +72,8 @@ export default function Home() {
         click to start!
       </div> */}
       <Scene />
+      <CameraControls />
+      <RealCameraControls />
     </div>
   );
 }
