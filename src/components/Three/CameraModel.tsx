@@ -5,8 +5,52 @@ import { Group, Mesh } from "three";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
 import { useFrame } from "@react-three/fiber";
 
+const handleLeftButtonClick = () => {
+  console.log("TOMAA");
+};
+const handleButton1Click = (event: any) => {
+  event.stopPropagation();
+  console.log("Button 1 clicked! (Korpus008)");
+  // Aquí puedes añadir la lógica específica para el botón 1
+};
+
+const handleButton2Click = (event: any) => {
+  event.stopPropagation();
+  console.log("Button 2 clicked! (Korpus007)");
+  // Aquí puedes añadir la lógica específica para el botón 2
+};
+
+const handleButton3Click = (event: any) => {
+  event.stopPropagation();
+  console.log("Button 3 clicked! (Korpus006)");
+  // Aquí puedes añadir la lógica específica para el botón 3
+};
+
+const handleButton4Click = (event: any) => {
+  event.stopPropagation();
+  console.log("Button 4 clicked! (Korpus005)");
+  // Aquí puedes añadir la lógica específica para el botón 4
+};
+
+const handleButtonUpClick = (event: any) => {
+  event.stopPropagation();
+  console.log("Button Up clicked! (Korpus004)");
+  // Aquí puedes añadir la lógica específica para el botón up
+};
+
+const handleButtonRightClick = (event: any) => {
+  event.stopPropagation();
+  console.log("Button Right clicked! (Korpus003)");
+  // Aquí puedes añadir la lógica específica para el botón right
+};
+
+const handleButtonDownClick = (event: any) => {
+  event.stopPropagation();
+  console.log("Button Down clicked! (Korpus002)");
+  // Aquí puedes añadir la lógica específica para el botón down
+};
 const CameraModel: React.FC = () => {
-  const { nodes, materials } = useGLTF("/models/canontestcajita4.glb");
+  const { nodes, materials } = useGLTF("/models/canontestcajita6.glb");
   const cameraRef = useRef<Group>(null);
   const cameraPivotRef = useRef<Group>(null); // Grupo para controlar el pivot de toda la cámara
   const lensVorhang_1Ref = useRef<Mesh>(null);
@@ -19,6 +63,8 @@ const CameraModel: React.FC = () => {
   const lensGlassRef = useRef<Mesh>(null);
   const tapaRef = useRef<Mesh>(null);
   const lensInnenHuleRef = useRef<Mesh>(null);
+  const buttonLeftRef = useRef<Mesh>(null);
+  const screenRef = useRef<Mesh>(null);
 
   const animations = useCameraModelStore((s) => s.animations);
 
@@ -46,6 +92,9 @@ const CameraModel: React.FC = () => {
   const tapaCerradaRotX = 0;
 
   useFrame((state, delta) => {
+    // if (buttonLeftRef.current) {
+    //   buttonLeftRef.current.position.z += 1;
+    // }
     const targetRotXTapa = animations.openCase
       ? tapaAbiertaRotX
       : tapaCerradaRotX;
@@ -226,8 +275,35 @@ const CameraModel: React.FC = () => {
         return tapaRef;
       case "Lens_Innen_Hüle":
         return lensInnenHuleRef;
+      case "Korpus008":
+        return buttonLeftRef;
+      case "Korpus_7":
+        return screenRef;
       default:
         return undefined;
+    }
+  };
+
+  const getClickHandler = (meshName: string) => {
+    switch (meshName) {
+      case "Korpus001":
+        return handleLeftButtonClick;
+      case "Korpus002":
+        return handleButtonDownClick;
+      case "Korpus003":
+        return handleButtonRightClick;
+      case "Korpus004":
+        return handleButtonUpClick;
+      case "Korpus005":
+        return handleButton4Click;
+      case "Korpus006":
+        return handleButton3Click;
+      case "Korpus007":
+        return handleButton2Click;
+      case "Korpus008":
+        return handleButton1Click;
+      default:
+        return null;
     }
   };
 
@@ -249,7 +325,33 @@ const CameraModel: React.FC = () => {
           .map((mesh: any) => {
             const meshName = mesh.name;
             const ref = getRefForMesh(meshName);
-
+            const clickHandler = getClickHandler(meshName);
+            console.log(meshName);
+            if (clickHandler) {
+              return (
+                <mesh
+                  key={mesh.uuid}
+                  ref={ref}
+                  geometry={mesh.geometry}
+                  material={
+                    mesh.material ||
+                    materials[mesh.name] ||
+                    Object.values(materials)[0]
+                  }
+                  castShadow
+                  position={mesh.position}
+                  rotation={mesh.rotation}
+                  scale={mesh.scale}
+                  onClick={clickHandler}
+                  onPointerEnter={() => {
+                    document.body.style.cursor = "pointer";
+                  }}
+                  onPointerLeave={() => {
+                    document.body.style.cursor = "default";
+                  }}
+                />
+              );
+            }
             return (
               <mesh
                 key={mesh.uuid}
@@ -272,5 +374,5 @@ const CameraModel: React.FC = () => {
   );
 };
 
-useGLTF.preload("/models/canontestcajita4.glb");
+useGLTF.preload("/models/canontestcajita6.glb");
 export default CameraModel;

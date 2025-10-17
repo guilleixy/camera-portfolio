@@ -6,6 +6,7 @@ import CameraModel from "./CameraModel";
 import styles from "./Scene.module.css";
 import SDModel from "./SDModel";
 import Camera from "./Camera";
+import { EffectComposer, Pixelation } from "@react-three/postprocessing";
 
 export default function Scene() {
   return (
