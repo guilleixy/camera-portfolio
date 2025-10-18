@@ -64,14 +64,14 @@ export default function Home() {
   };
   return (
     <div className={styles.page}>
-      {/* <div className={styles.header} ref={headerRef} onClick={handleStart}>
+      <div className={styles.header} ref={headerRef} onClick={handleStart}>
         <h1>guillermo bernal</h1>
       </div>
       <CameraRoll containerRef={cameraRollRef} />
       <div ref={customCursorRef} className={styles.cursor}>
         click to start!
-      </div> */}
-      <Scene />
+      </div>
+      {/* <Scene /> */}
       <CameraControls />
       <RealCameraControls />
     </div>

@@ -44,3 +44,41 @@ a {
     color-scheme: dark;
   }
 }
+
+@keyframes chromaticShift {
+  0% {
+    transform: translateX(0px);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: translateX(1px);
+    filter: hue-rotate(5deg);
+  }
+  100% {
+    transform: translateX(0px);
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes screenFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+/* Pixelado más pronunciado */
+.pixelated {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Efecto de interferencia */
+.interference {
+  animation: screenFlicker 0.1s ease-in-out infinite;
+}

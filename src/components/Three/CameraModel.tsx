@@ -1,9 +1,10 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { useGLTF } from "@react-three/drei";
+import { Html, useGLTF } from "@react-three/drei";
 import { Group, Mesh } from "three";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
 import { useFrame } from "@react-three/fiber";
+import { ScreenContent } from "./ScreenContent/ScreenContent";
 
 const handleLeftButtonClick = () => {
   console.log("TOMAA");
@@ -327,6 +328,64 @@ const CameraModel: React.FC = () => {
             const ref = getRefForMesh(meshName);
             const clickHandler = getClickHandler(meshName);
             console.log(meshName);
+            // Caso especial para la pantalla
+            if (meshName === "Korpus_7") {
+              return (
+                <group key={mesh.uuid}>
+                  {/* Mesh original de la pantalla (opcional, puedes hacerla invisible) */}
+                  <mesh
+                    ref={ref}
+                    geometry={mesh.geometry}
+                    material={
+                      mesh.material ||
+                      materials[mesh.name] ||
+                      Object.values(materials)[0]
+                    }
+                    castShadow
+                    position={mesh.position}
+                    rotation={mesh.rotation}
+                    scale={mesh.scale}
+                    visible={true} // Oculta el mesh original
+                  />
+
+                  {/* HTML Content en la posición de la pantalla */}
+                  <Html
+                    position={[
+                      63,
+                      85,
+                      -42, // Más adelante para que sea visible
+                    ]}
+                    rotation={[0, Math.PI, 0]}
+                    scale={[20, 20, 20]} // Escala más grande
+                    transform
+                    occlude={true} // Desactivar oclusión temporalmente
+                    distanceFactor={0} // Menor factor de distancia
+                    //zIndexRange={[100, 0]} // Asegurar que esté al frente
+                    zIndexRange={[100, 0]}
+                  >
+                    <div
+                      style={{
+                        backgroundColor: "blue",
+                        color: "white",
+                        padding: "20px",
+                        fontSize: "24px",
+                        //border: "2px solid white",
+                        borderRadius: "4px",
+                        textAlign: "center",
+                        height: "135px",
+                        width: "200px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      HOLAAA PANTALLA
+                    </div>
+                    {/* <ScreenContent /> */}
+                  </Html>
+                </group>
+              );
+            }
             if (clickHandler) {
               return (
                 <mesh
