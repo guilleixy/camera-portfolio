@@ -1,0 +1,11 @@
+.root {
+  height: 135px;
+  width: 200px;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.4rem;
+}
+
+.basicSlide {
+  background-color: #ffffff;
+}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { Html, useGLTF } from "@react-three/drei";
 import { Group, Mesh } from "three";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
@@ -66,6 +66,9 @@ const CameraModel: React.FC = () => {
   const lensInnenHuleRef = useRef<Mesh>(null);
   const buttonLeftRef = useRef<Mesh>(null);
   const screenRef = useRef<Mesh>(null);
+
+  const [card, setCard] = useState(0);
+  const [slide, setSlide] = useState(0);
 
   const animations = useCameraModelStore((s) => s.animations);
 
@@ -363,25 +366,7 @@ const CameraModel: React.FC = () => {
                     //zIndexRange={[100, 0]} // Asegurar que esté al frente
                     zIndexRange={[100, 0]}
                   >
-                    <div
-                      style={{
-                        backgroundColor: "blue",
-                        color: "white",
-                        padding: "20px",
-                        fontSize: "24px",
-                        //border: "2px solid white",
-                        borderRadius: "4px",
-                        textAlign: "center",
-                        height: "135px",
-                        width: "200px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      HOLAAA PANTALLA
-                    </div>
-                    {/* <ScreenContent /> */}
+                    <ScreenContent slide={slide} card={card} />
                   </Html>
                 </group>
               );
