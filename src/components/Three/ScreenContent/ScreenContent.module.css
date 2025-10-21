@@ -1,11 +1,14 @@
 .root {
   height: 135px;
-  width: 200px;
+  width: 197px;
   border-radius: 4px;
   color: white;
   font-size: 0.4rem;
+  overflow: hidden;
 }
 
 .basicSlide {
   background-color: #ffffff;
+  height: 100%;
+  width: 100%;
 }

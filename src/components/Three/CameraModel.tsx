@@ -6,51 +6,11 @@ import { useCameraModelStore } from "@/store/useCameraModelStore";
 import { useFrame } from "@react-three/fiber";
 import { ScreenContent } from "./ScreenContent/ScreenContent";
 
-const handleLeftButtonClick = () => {
-  console.log("TOMAA");
-};
-const handleButton1Click = (event: any) => {
-  event.stopPropagation();
-  console.log("Button 1 clicked! (Korpus008)");
-  // Aquí puedes añadir la lógica específica para el botón 1
-};
-
-const handleButton2Click = (event: any) => {
-  event.stopPropagation();
-  console.log("Button 2 clicked! (Korpus007)");
-  // Aquí puedes añadir la lógica específica para el botón 2
-};
-
-const handleButton3Click = (event: any) => {
-  event.stopPropagation();
-  console.log("Button 3 clicked! (Korpus006)");
-  // Aquí puedes añadir la lógica específica para el botón 3
-};
-
-const handleButton4Click = (event: any) => {
-  event.stopPropagation();
-  console.log("Button 4 clicked! (Korpus005)");
-  // Aquí puedes añadir la lógica específica para el botón 4
-};
-
-const handleButtonUpClick = (event: any) => {
-  event.stopPropagation();
-  console.log("Button Up clicked! (Korpus004)");
-  // Aquí puedes añadir la lógica específica para el botón up
-};
-
-const handleButtonRightClick = (event: any) => {
-  event.stopPropagation();
-  console.log("Button Right clicked! (Korpus003)");
-  // Aquí puedes añadir la lógica específica para el botón right
-};
-
-const handleButtonDownClick = (event: any) => {
-  event.stopPropagation();
-  console.log("Button Down clicked! (Korpus002)");
-  // Aquí puedes añadir la lógica específica para el botón down
-};
-const CameraModel: React.FC = () => {
+const CameraModel: React.FC<{
+  translations: {
+    title: string;
+  };
+}> = ({ translations }) => {
   const { nodes, materials } = useGLTF("/models/canontestcajita6.glb");
   const cameraRef = useRef<Group>(null);
   const cameraPivotRef = useRef<Group>(null); // Grupo para controlar el pivot de toda la cámara
@@ -69,6 +29,54 @@ const CameraModel: React.FC = () => {
 
   const [card, setCard] = useState(0);
   const [slide, setSlide] = useState(0);
+
+  const handleButton1Click = (event: any) => {
+    event.stopPropagation();
+    console.log("Button 1 clicked! (Korpus008)");
+    // Aquí puedes añadir la lógica específica para el botón 1
+  };
+
+  const handleButton2Click = (event: any) => {
+    event.stopPropagation();
+    console.log("Button 2 clicked! (Korpus007)");
+    // Aquí puedes añadir la lógica específica para el botón 2
+  };
+
+  const handleButton3Click = (event: any) => {
+    event.stopPropagation();
+    console.log("Button 3 clicked! (Korpus006)");
+    // Aquí puedes añadir la lógica específica para el botón 3
+  };
+
+  const handleButton4Click = (event: any) => {
+    event.stopPropagation();
+    console.log("Button 4 clicked! (Korpus005)");
+    // Aquí puedes añadir la lógica específica para el botón 4
+  };
+
+  const handleButtonUpClick = (event: any) => {
+    event.stopPropagation();
+    console.log("Button Up clicked! (Korpus004)");
+    // Aquí puedes añadir la lógica específica para el botón up
+  };
+
+  const handleLeftButtonClick = (event: any) => {
+    event.stopPropagation();
+    setSlide((prev) => prev - 1);
+  };
+
+  const handleButtonRightClick = (event: any) => {
+    event.stopPropagation();
+    setSlide((prev) => prev + 1);
+    console.log("Button Right clicked! (Korpus003)");
+    // Aquí puedes añadir la lógica específica para el botón right
+  };
+
+  const handleButtonDownClick = (event: any) => {
+    event.stopPropagation();
+    console.log("Button Down clicked! (Korpus002)");
+    // Aquí puedes añadir la lógica específica para el botón down
+  };
 
   const animations = useCameraModelStore((s) => s.animations);
 
@@ -366,7 +374,11 @@ const CameraModel: React.FC = () => {
                     //zIndexRange={[100, 0]} // Asegurar que esté al frente
                     zIndexRange={[100, 0]}
                   >
-                    <ScreenContent slide={slide} card={card} />
+                    <ScreenContent
+                      slide={slide}
+                      card={card}
+                      translations={translations}
+                    />
                   </Html>
                 </group>
               );

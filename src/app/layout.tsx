@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
-
+import { NextIntlClientProvider } from "next-intl";
 const clashDisplayFont = localFont({
   src: [
     {
@@ -26,14 +26,16 @@ export const metadata: Metadata = {
   description: "Portfolio de Guillermo Bernal",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${clashDisplayFont.variable}`}>{children}</body>
+    <html>
+      <body className={`${clashDisplayFont.variable}`}>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      </body>
     </html>
   );
 }
