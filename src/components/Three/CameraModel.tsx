@@ -1,15 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { Html, useGLTF } from "@react-three/drei";
+import { Html, MeshTransmissionMaterial, useGLTF } from "@react-three/drei";
 import { Group, Mesh } from "three";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
 import { useFrame } from "@react-three/fiber";
 import { ScreenContent } from "./ScreenContent/ScreenContent";
 
 const CameraModel: React.FC<{
-  translations: {
-    title: string;
-  };
+  translations: any;
 }> = ({ translations }) => {
   const { nodes, materials } = useGLTF("/models/canontestcajita6.glb");
   const cameraRef = useRef<Group>(null);
@@ -356,9 +354,8 @@ const CameraModel: React.FC<{
                     position={mesh.position}
                     rotation={mesh.rotation}
                     scale={mesh.scale}
-                    visible={true} // Oculta el mesh original
+                    visible={true}
                   />
-
                   {/* HTML Content en la posición de la pantalla */}
                   <Html
                     position={[

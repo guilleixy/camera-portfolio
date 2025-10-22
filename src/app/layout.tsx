@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
@@ -21,6 +21,13 @@ const clashDisplayFont = localFont({
   adjustFontFallback: "Times New Roman",
 });
 
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--roboto-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Guillermo Bernal",
   description: "Portfolio de Guillermo Bernal",
@@ -33,7 +40,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html>
-      <body className={`${clashDisplayFont.variable}`}>
+      <body className={`${clashDisplayFont.variable} ${robotoMono.variable}`}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>

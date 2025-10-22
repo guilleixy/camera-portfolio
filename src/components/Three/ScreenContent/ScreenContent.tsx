@@ -9,33 +9,38 @@ export function ScreenContent({
 }: {
   card: number;
   slide: number;
-  translations: {
-    title: string;
-  };
+  translations: any;
 }) {
   const SCREEN_CONTENT: Record<number, Record<number, JSX.Element>> = {
     0: {
       0: (
-        <div className={`${styles.basicSlide}`}>
-          <h1>{translations.title}</h1>
-          <p>
-            Explora mi trabajo fotográfico a través de esta experiencia
-            interactiva
-          </p>
-          <button className={styles.cta}>Ver Proyectos</button>
+        <div
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/1.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <h3 className={styles.textUpscaledY}>{translations.slide0Title}</h3>
+          <p className={styles.textUpscaledY}>{translations.slide0Controls}</p>
         </div>
       ),
       1: (
-        <>
-          <h2>Sobre Mí</h2>
-          <p>Fotógrafo profesional especializado en...</p>
+        <div className={`${styles.basicSlide}`}>
+          <p>{translations.slide1Controls}</p>
+          <p>{translations.slide1IndexTitle}</p>
           <ul>
-            <li>Retratos</li>
-            <li>Paisajes</li>
-            <li>Eventos</li>
+            <li>{translations.slide1Index0}</li>
+            <li>{translations.slide1Index1}</li>
+            <li>{translations.slide1Index2}</li>
+            <li>{translations.slide1Index3}</li>
           </ul>
-        </>
+        </div>
       ),
+      2: <div className={`${styles.basicSlide}`}></div>,
     },
     1: {
       0: (
@@ -77,6 +82,17 @@ export function ScreenContent({
 
   return (
     <div className={styles.root}>
+      <svg style={{ position: "absolute", width: 0, height: 0 }}>
+        <defs>
+          <filter id="pixelate" x="0%" y="0%" width="100%" height="100%">
+            <feFlood x="0.3" y="0.3" height="0.2" width="0.2" />
+            <feComposite width="0.5" height="0.5" />
+            <feTile result="a" />
+            <feComposite in="SourceGraphic" in2="a" operator="in" />
+            <feMorphology operator="dilate" radius="0.2" />
+          </filter>
+        </defs>
+      </svg>
       {content || (
         <>
           <h2>Pantalla no disponible</h2>

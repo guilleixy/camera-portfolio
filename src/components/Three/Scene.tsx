@@ -16,14 +16,20 @@ import {
 } from "@react-three/postprocessing";
 
 export default function Scene() {
-  const t = useTranslations("HomePage");
+  const t = useTranslations("Cards");
   const translations = {
-    title: t("title"),
-    // añade el resto según las necesites
+    slide0Title: t("0.Slides.0.presentation"),
+    slide0Controls: t("0.Slides.0.controls"),
+    slide1Controls: t("0.Slides.1.controls"),
+    slide1IndexTitle: t("0.Slides.1.index.title"),
+    slide1Index0: t("0.Slides.1.index.0"),
+    slide1Index1: t("0.Slides.1.index.1"),
+    slide1Index2: t("0.Slides.1.index.2"),
+    slide1Index3: t("0.Slides.1.index.3"),
   };
   return (
     <>
-      <Canvas className={styles.canvas}>
+      <Canvas className={styles.canvas} gl={{ alpha: true }}>
         <Suspense fallback={null}>
           <Camera />
           <Environment preset="city" />

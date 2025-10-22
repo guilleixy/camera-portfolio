@@ -1,14 +1,72 @@
 .root {
-  height: 135px;
-  width: 197px;
+  /* height: 125px;
+  width: 190px; */
+  /* border-radius: 4px; */
+  height: 131px;
+  width: 196px;
   border-radius: 4px;
   color: white;
   font-size: 0.4rem;
   overflow: hidden;
+  --aberration-offset: 0.005rem;
+  --aberration-bleed: var(--override-aberration-bleed, 0.02rem);
+  --aberration-opacity: var(--override-aberration-opacity, 0.6);
+  --color: 247, 247, 225;
+  --override-aberration-opacity: 0.6;
+  filter: url(#pixelate);
 }
 
 .basicSlide {
-  background-color: #ffffff;
+  background-color: #655f5f;
   height: 100%;
   width: 100%;
+  padding: 5px 10px;
+}
+
+/* .root::before {
+  content: "";
+  position: absolute;
+  display: flex;
+  inset: 0;
+  mix-blend-mode: overlay;
+  z-index: 3;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='6' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); 
+  pointer-events: none;
+  background-repeat: repeat;
+} */
+
+.root {
+  text-shadow: calc(var(--aberration-offset) * 3) 0 var(--aberration-bleed)
+      rgba(0, 0, 255, var(--aberration-opacity)),
+    calc(-3 * var(--aberration-offset)) 0 var(--aberration-bleed)
+      rgba(255, 0, 0, var(--aberration-opacity)),
+    calc(2 * var(--aberration-offset)) 0 var(--aberration-bleed)
+      rgba(0, 255, 0, var(--aberration-opacity)),
+    calc(-2 * var(--aberration-offset)) 0 var(--aberration-bleed)
+      rgba(255, 0, 255, var(--aberration-opacity));
+  font-family: var(--roboto-mono);
+  font-weight: 300;
+}
+
+.root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 0, 0, 0.15) 33%,
+      transparent 33%
+    ),
+    radial-gradient(circle, rgba(0, 255, 0, 0.15) 33%, transparent 33%),
+    radial-gradient(circle, rgba(0, 0, 255, 0.15) 33%, transparent 33%);
+  background-size: 0.6px 0.6px, 0.6px 0.6px, 0.6px 0.6px;
+  background-position: 0 0, 0.2px 0, 0.4px 0;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.textUpscaledY {
+  transform: scaleY(1.3);
 }
