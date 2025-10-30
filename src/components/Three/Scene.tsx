@@ -21,7 +21,6 @@ export default function Scene() {
     slide0Title: t("0.Slides.0.presentation"),
     slide0Controls: t("0.Slides.0.controls"),
     slide1Controls: t("0.Slides.1.controls"),
-    slide1IndexTitle: t("0.Slides.1.index.title"),
     slide1Index0: t("0.Slides.1.index.0"),
     slide1Index1: t("0.Slides.1.index.1"),
     slide1Index2: t("0.Slides.1.index.2"),
@@ -32,7 +31,11 @@ export default function Scene() {
       <Canvas className={styles.canvas} gl={{ alpha: true }}>
         <Suspense fallback={null}>
           <Camera />
-          <Environment preset="city" />
+          <Environment
+            preset="city"
+            backgroundIntensity={0}
+            environmentIntensity={0.7}
+          />
           {/* <OrbitControls minDistance={100} /> */}
           <CameraModel translations={translations} />
           <SDModel />

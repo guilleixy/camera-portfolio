@@ -40,9 +40,6 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>{translations.slide1Controls}</p>
-          <p className={styles.textUpscaledY}>
-            {translations.slide1IndexTitle}
-          </p>
           <ul className={styles.textUpscaledY}>
             <li>{translations.slide1Index0}</li>
             <li>{translations.slide1Index1}</li>
@@ -51,7 +48,9 @@ export function ScreenContent({
           </ul>
         </article>
       ),
-      2: (
+    },
+    1: {
+      0: (
         <article
           className={`${styles.basicSlide}`}
           style={{
@@ -71,7 +70,7 @@ export function ScreenContent({
           </p>
         </article>
       ),
-      3: (
+      1: (
         <article
           className={`${styles.basicSlide}`}
           style={{
@@ -92,7 +91,7 @@ export function ScreenContent({
         </article>
       ),
     },
-    1: {
+    2: {
       0: (
         <article
           className={`${styles.basicSlide}`}
@@ -228,7 +227,7 @@ export function ScreenContent({
         </article>
       ),
     },
-    2: {
+    3: {
       0: (
         <article
           className={`${styles.basicSlide}`}

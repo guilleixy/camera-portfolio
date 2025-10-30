@@ -9,7 +9,7 @@ import { ScreenContent } from "./ScreenContent/ScreenContent";
 const CameraModel: React.FC<{
   translations: any;
 }> = ({ translations }) => {
-  const { nodes, materials } = useGLTF("/models/canontestcajita6.glb");
+  const { nodes, materials } = useGLTF("/models/canoncajita8.glb");
   const cameraRef = useRef<Group>(null);
   const cameraPivotRef = useRef<Group>(null); // Grupo para controlar el pivot de toda la cámara
   const lensVorhang_1Ref = useRef<Mesh>(null);
@@ -28,48 +28,48 @@ const CameraModel: React.FC<{
   const [card, setCard] = useState(0);
   const [slide, setSlide] = useState(0);
 
+  const slidesLengths: Array<number> = [2, 2, 7, 6, 1];
+
   const handleButton1Click = (event: any) => {
     event.stopPropagation();
-    setCard(0);
+    setCard(1);
+    setSlide(0);
   };
 
   const handleButton2Click = (event: any) => {
     event.stopPropagation();
-    setCard(1);
+    setCard(2);
+    setSlide(0);
   };
 
   const handleButton3Click = (event: any) => {
     event.stopPropagation();
-    setCard(2);
+    setCard(3);
+    setSlide(0);
   };
 
   const handleButton4Click = (event: any) => {
     event.stopPropagation();
-    setCard(3);
+    setCard(4);
+    setSlide(0);
   };
 
   const handleButtonUpClick = (event: any) => {
     event.stopPropagation();
-    console.log("Button Up clicked! (Korpus004)");
-    // Aquí puedes añadir la lógica específica para el botón up
   };
 
   const handleLeftButtonClick = (event: any) => {
     event.stopPropagation();
-    setSlide((prev) => prev - 1);
+    slide !== 0 && setSlide((prev) => prev - 1);
   };
 
   const handleButtonRightClick = (event: any) => {
     event.stopPropagation();
-    setSlide((prev) => prev + 1);
-    console.log("Button Right clicked! (Korpus003)");
-    // Aquí puedes añadir la lógica específica para el botón right
+    slidesLengths[card] != slide + 1 && setSlide((prev) => prev + 1);
   };
 
   const handleButtonDownClick = (event: any) => {
     event.stopPropagation();
-    console.log("Button Down clicked! (Korpus002)");
-    // Aquí puedes añadir la lógica específica para el botón down
   };
 
   const animations = useCameraModelStore((s) => s.animations);
