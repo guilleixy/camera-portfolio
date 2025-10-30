@@ -31,6 +31,22 @@
   list-style-type: none;
 }
 
+.squareImageSlide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f0d0d;
+}
+
+.squareImageSlide img,
+.squareImageSlide video {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+}
+
 /* .root::before {
   content: "";
   position: absolute;

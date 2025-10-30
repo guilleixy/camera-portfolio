@@ -249,6 +249,31 @@ export function ScreenContent({
           </p>
         </article>
       ),
+      1: (
+        <article className={`${styles.squareImageSlide}`}>
+          <img src="/images/design/cartel_lleida.png" alt="" />
+        </article>
+      ),
+      2: (
+        <article className={`${styles.squareImageSlide}`}>
+          <img src="/images/design/cartel_lleida2.png" alt="" />
+        </article>
+      ),
+      3: (
+        <article className={`${styles.squareImageSlide}`}>
+          <img src="/images/design/cartel_gira.png" alt="" />
+        </article>
+      ),
+      4: (
+        <article className={`${styles.squareImageSlide}`}>
+          <img src="/images/design/carretera_raw.png" alt="" />
+        </article>
+      ),
+      5: (
+        <article className={`${styles.squareImageSlide}`}>
+          <video src="/images/design/canvas_carretera.mp4" autoPlay loop />
+        </article>
+      ),
     },
   };
   const content = SCREEN_CONTENT[card]?.[slide];
