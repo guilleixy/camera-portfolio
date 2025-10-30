@@ -14,7 +14,7 @@ export function ScreenContent({
   const SCREEN_CONTENT: Record<number, Record<number, JSX.Element>> = {
     0: {
       0: (
-        <div
+        <article
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
@@ -26,62 +26,235 @@ export function ScreenContent({
         >
           <h3 className={styles.textUpscaledY}>{translations.slide0Title}</h3>
           <p className={styles.textUpscaledY}>{translations.slide0Controls}</p>
-        </div>
+        </article>
       ),
       1: (
-        <div className={`${styles.basicSlide}`}>
-          <p>{translations.slide1Controls}</p>
-          <p>{translations.slide1IndexTitle}</p>
-          <ul>
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>{translations.slide1Controls}</p>
+          <p className={styles.textUpscaledY}>
+            {translations.slide1IndexTitle}
+          </p>
+          <ul className={styles.textUpscaledY}>
             <li>{translations.slide1Index0}</li>
             <li>{translations.slide1Index1}</li>
             <li>{translations.slide1Index2}</li>
             <li>{translations.slide1Index3}</li>
           </ul>
-        </div>
+        </article>
       ),
-      2: <div className={`${styles.basicSlide}`}></div>,
+      2: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>
+            I am a 23 year old developer from Zaragoza, Spain
+          </p>
+          <p className={styles.textUpscaledY}>
+            I am currenly studying computer science while I work as a
+            programmer.
+          </p>
+        </article>
+      ),
+      3: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>I really like art!</p>
+          <p className={styles.textUpscaledY}>
+            I play bass and I like books and photography (obviously)
+          </p>
+          <p className={styles.textUpscaledY}>
+            Music is a big part of my life, and my latest obsession has been:{" "}
+          </p>
+        </article>
+      ),
     },
     1: {
       0: (
-        <>
-          <h1>Proyecto: Naturaleza</h1>
-          <img
-            src="/images/nature.jpg"
-            alt="Naturaleza"
-            className={styles.image}
-          />
-          <p>Una colección de fotografías capturando la belleza natural</p>
-        </>
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <h3 className={styles.textUpscaledY}>My web stack</h3>
+          <p className={styles.textUpscaledY}>
+            I have worked with a broad range of technologies, both front and
+            backend.
+          </p>
+          <p className={styles.textUpscaledY}>
+            But definitely my favourite ones are ThreeJS and NextJS
+          </p>
+          <p className={styles.textUpscaledY}>
+            If you want to learn more, check out my <a href="">Github Page</a>
+          </p>
+        </article>
       ),
       1: (
-        <>
-          <h2>Detalles del Proyecto</h2>
-          <div className={styles.details}>
-            <span>Año: 2024</span>
-            <span>Ubicación: Patagonia</span>
-            <span>Cámara: Canon EOS R5</span>
-          </div>
-        </>
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>
+            I am also really interested in ML and coding in general.
+          </p>
+          <p className={styles.textUpscaledY}>
+            esto se puede reducir pq en el de arriba ya pondre un poco de cursos
+            I have undergone several courses on machine learning and AI, and
+            I've also participated in many hackathons and jams.
+          </p>
+          <p className={styles.textUpscaledY}>
+            But all that it's too boring so if you're interested you can just
+            just check my <a href="">LinkedIn profile</a>
+          </p>
+        </article>
+      ),
+      2: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>
+            In my last hackathon I worked on a smart watering system.
+          </p>
+          <p className={styles.textUpscaledY}>
+            We trained a neural network to detect different kinds of plants.
+          </p>
+          <p className={styles.textUpscaledY}>
+            And depending on the specific plant needs and current weather and
+            humidity conditions, it was watered with just the right amount of
+            water.
+          </p>
+          <p className={styles.textUpscaledY}>
+            We also made like an evil version of Duolingo, where you had to
+            anwser different questions right to water your plant.
+          </p>
+        </article>
+      ),
+      3: <article>(video)</article>,
+      4: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>
+            I also worked on a exopanetary systems visualizer able to
+            procedurally recreate faithful replicas of planets and stars
+            discovered by the NASA
+          </p>
+          <p className={styles.textUpscaledY}>
+            We also developed what we called the "music of the stars": a
+            positional sound system where every stellar body emited a
+            disctincive sound depending on its mass and temperature.
+          </p>
+          <p className={styles.textUpscaledY}>
+            The coolest part of the project was implementing VR!
+          </p>
+        </article>
+      ),
+      5: (
+        <article>
+          <p className={styles.textUpscaledY}>video</p>
+        </article>
+      ),
+      6: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>
+            One of my first "big" projects was saight: an app to help people
+            with visual impediments to interact with their surroundings
+          </p>
+          <p className={styles.textUpscaledY}>
+            I used a computer vision model to detect objects in real time and
+            inform the user throgh TTS
+          </p>
+          <p className={styles.textUpscaledY}>
+            I also implemented voice control and other cool features like face
+            detection and connection to an LLM with the environment as context
+          </p>
+        </article>
       ),
     },
     2: {
       0: (
-        <>
-          <h1>Contacto</h1>
-          <p>¿Interesado en trabajar juntos?</p>
-          <div className={styles.contact}>
-            <a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a>
-            <a href="tel:+123456789">+1 234 567 89</a>
-          </div>
-        </>
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>
+            Besides programming, I also like to design, animate or just create
+            stuff
+          </p>
+          <p className={styles.textUpscaledY}>
+            Check out some of the things I've made
+          </p>
+        </article>
       ),
     },
   };
   const content = SCREEN_CONTENT[card]?.[slide];
 
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <svg style={{ position: "absolute", width: 0, height: 0 }}>
         <defs>
           <filter id="pixelate" x="0%" y="0%" width="100%" height="100%">
@@ -101,6 +274,6 @@ export function ScreenContent({
           </p>
         </>
       )}
-    </div>
+    </section>
   );
 }

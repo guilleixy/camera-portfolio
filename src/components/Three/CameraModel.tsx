@@ -30,26 +30,22 @@ const CameraModel: React.FC<{
 
   const handleButton1Click = (event: any) => {
     event.stopPropagation();
-    console.log("Button 1 clicked! (Korpus008)");
-    // Aquí puedes añadir la lógica específica para el botón 1
+    setCard(0);
   };
 
   const handleButton2Click = (event: any) => {
     event.stopPropagation();
-    console.log("Button 2 clicked! (Korpus007)");
-    // Aquí puedes añadir la lógica específica para el botón 2
+    setCard(1);
   };
 
   const handleButton3Click = (event: any) => {
     event.stopPropagation();
-    console.log("Button 3 clicked! (Korpus006)");
-    // Aquí puedes añadir la lógica específica para el botón 3
+    setCard(2);
   };
 
   const handleButton4Click = (event: any) => {
     event.stopPropagation();
-    console.log("Button 4 clicked! (Korpus005)");
-    // Aquí puedes añadir la lógica específica para el botón 4
+    setCard(3);
   };
 
   const handleButtonUpClick = (event: any) => {

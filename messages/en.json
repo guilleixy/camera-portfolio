@@ -3,11 +3,11 @@
     "0": {
       "Slides": {
         "0": {
-          "presentation": "Hi! I am Guille :), a 23 old developer from Zaragoza, Spain.",
+          "presentation": "Hi! I am Guille :)",
           "controls": "To move between slides, use the arrow keys to your right."
         },
         "1": {
-          "controls": "You can select the SD card with the buttons under the screen. Each SD contains different information.",
+          "controls": "You can select the SD card with the buttons under the screen. Each SD contains different stuff.",
           "index": {
             "title": "Contents:",
             "0": "Me",
@@ -16,6 +16,17 @@
             "3": "Gallery"
           }
         }
+      }
+    },
+    "1": {
+      "Slides": {
+        "0": {
+          "title": "My web stack",
+          "p1": "",
+          "p2": "",
+          "githubCTA": ""
+        },
+        "1": {}
       }
     }
   }
