@@ -73,7 +73,7 @@ const CameraModel: React.FC<{
     }, 600);
     setTimeout(() => {
       cameraModelToggle("openCase");
-    }, 600);
+    }, 680);
     setTimeout(() => {
       cameraToggle("backZoomIn");
     }, 800);
