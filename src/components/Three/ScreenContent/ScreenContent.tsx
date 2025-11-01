@@ -169,7 +169,11 @@ export function ScreenContent({
           </p>
         </article>
       ),
-      3: <article>(video)</article>,
+      3: (
+        <article className={`${styles.squareImageSlide}`}>
+          <video src="/images/projects/notjustwaterdemo.mp4" autoPlay loop />
+        </article>
+      ),
       4: (
         <article
           className={`${styles.basicSlide}`}
@@ -197,8 +201,8 @@ export function ScreenContent({
         </article>
       ),
       5: (
-        <article>
-          <p className={styles.textUpscaledY}>video</p>
+        <article className={`${styles.squareImageSlide}`}>
+          <video src="/images/projects/spacedemo.mp4" autoPlay loop />
         </article>
       ),
       6: (
@@ -290,14 +294,7 @@ export function ScreenContent({
           </filter>
         </defs>
       </svg>
-      {content || (
-        <>
-          <h2>Pantalla no disponible</h2>
-          <p>
-            Card: {card} | Slide: {slide}
-          </p>
-        </>
-      )}
+      {content || <></>}
     </section>
   );
 }

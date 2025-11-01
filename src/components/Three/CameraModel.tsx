@@ -5,11 +5,18 @@ import { Group, Mesh } from "three";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
 import { useFrame } from "@react-three/fiber";
 import { ScreenContent } from "./ScreenContent/ScreenContent";
+import { useSDCardModelStore } from "@/store/useSDCardModelStore";
+import { useCameraStore } from "@/store/useCameraStore";
 
 const CameraModel: React.FC<{
   translations: any;
 }> = ({ translations }) => {
   const { nodes, materials } = useGLTF("/models/canoncajita8.glb");
+
+  const cameraToggle = useCameraStore((s) => s.toggle);
+  const sdCardToggle = useSDCardModelStore((s) => s.toggle);
+  const cameraModelToggle = useCameraModelStore((s) => s.toggle);
+
   const cameraRef = useRef<Group>(null);
   const cameraPivotRef = useRef<Group>(null); // Grupo para controlar el pivot de toda la cámara
   const lensVorhang_1Ref = useRef<Mesh>(null);
@@ -32,26 +39,94 @@ const CameraModel: React.FC<{
 
   const handleButton1Click = (event: any) => {
     event.stopPropagation();
-    setCard(1);
-    setSlide(0);
+    setCard(5);
+    cameraToggle("backZoomIn");
+    cameraModelToggle("openCase");
+    setTimeout(() => {
+      sdCardToggle("changeSD");
+    }, 100);
+    setTimeout(() => {
+      sdCardToggle("changeSD");
+    }, 600);
+    setTimeout(() => {
+      cameraModelToggle("openCase");
+    }, 800);
+    setTimeout(() => {
+      cameraToggle("backZoomIn");
+    }, 1000);
+    setTimeout(() => {
+      setCard(1);
+      setSlide(0);
+    }, 1200);
   };
 
   const handleButton2Click = (event: any) => {
     event.stopPropagation();
-    setCard(2);
-    setSlide(0);
+    setCard(5);
+    cameraToggle("backZoomIn");
+    cameraModelToggle("openCase");
+    setTimeout(() => {
+      sdCardToggle("changeSD");
+    }, 100);
+    setTimeout(() => {
+      sdCardToggle("changeSD");
+    }, 600);
+    setTimeout(() => {
+      cameraModelToggle("openCase");
+    }, 600);
+    setTimeout(() => {
+      cameraToggle("backZoomIn");
+    }, 800);
+    setTimeout(() => {
+      setCard(2);
+      setSlide(0);
+    }, 1200);
   };
 
   const handleButton3Click = (event: any) => {
     event.stopPropagation();
-    setCard(3);
-    setSlide(0);
+    setCard(5);
+    cameraToggle("backZoomIn");
+    cameraModelToggle("openCase");
+    setTimeout(() => {
+      sdCardToggle("changeSD");
+    }, 100);
+    setTimeout(() => {
+      sdCardToggle("changeSD");
+    }, 600);
+    setTimeout(() => {
+      cameraModelToggle("openCase");
+    }, 800);
+    setTimeout(() => {
+      cameraToggle("backZoomIn");
+    }, 1000);
+    setTimeout(() => {
+      setCard(3);
+      setSlide(0);
+    }, 1200);
   };
 
   const handleButton4Click = (event: any) => {
     event.stopPropagation();
-    setCard(4);
-    setSlide(0);
+    setCard(5);
+    cameraToggle("backZoomIn");
+    cameraModelToggle("openCase");
+    setTimeout(() => {
+      sdCardToggle("changeSD");
+    }, 100);
+    setTimeout(() => {
+      sdCardToggle("changeSD");
+    }, 600);
+    setTimeout(() => {
+      cameraModelToggle("openCase");
+    }, 800);
+    setTimeout(() => {
+      cameraToggle("backZoomIn");
+    }, 1000);
+    setTimeout(() => {
+      setCard(4);
+      setSlide(0);
+    }, 1200);
   };
 
   const handleButtonUpClick = (event: any) => {

@@ -20,12 +20,12 @@ export default function Camera() {
         targetPosition = positionFront;
         targetRotation = rotationFront;
       } else if (animations.backZoomIn) {
-        targetPosition = positionBackZoomIn;
-        targetRotation = rotationBackZoomIn;
-      } else {
-        // backZoomOut (default)
         targetPosition = positionBackZoomOut;
         targetRotation = rotationBackZoomOut;
+      } else {
+        // backZoomIn(default)
+        targetPosition = positionBackZoomIn;
+        targetRotation = rotationBackZoomIn;
       }
 
       // Animación suave de posición
