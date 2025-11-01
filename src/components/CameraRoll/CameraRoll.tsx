@@ -58,12 +58,12 @@ export default function CameraRoll({ containerRef }: CameraRollProps) {
             const index = getUniqueRandomInt(1, images, usedIndexes);
             return (
               <div className={styles.imageWrapper} key={`${k}`}>
-                <Image
+                <img
                   alt="Camera Roll"
                   src={`/images/camera_roll/${index}.jpg`}
                   width={258 / 1.3}
                   height={194 / 1.3}
-                  priority={false}
+                  //priority={false}
                   style={{ marginTop: getRandomInt(160, 360) }}
                 />
               </div>
