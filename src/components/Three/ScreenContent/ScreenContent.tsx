@@ -81,6 +81,24 @@ export function ScreenContent({
             backgroundRepeat: "no-repeat",
           }}
         >
+          <p>I also have an Associate Degree in web development.</p>
+          <p>
+            And I've also undergone a lot of courses from Google,
+            DeepLearning.AI about ML, UX and many more themes!{" "}
+          </p>
+        </article>
+      ),
+      2: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <p className={styles.textUpscaledY}>I really like art!</p>
           <p className={styles.textUpscaledY}>
             I play bass and I like books and photography (obviously)
@@ -105,14 +123,14 @@ export function ScreenContent({
         >
           <h3 className={styles.textUpscaledY}>My web stack</h3>
           <p className={styles.textUpscaledY}>
-            I have worked with a broad range of technologies, both front and
+            I've worked with a broad range of technologies, both front and
             backend.
           </p>
           <p className={styles.textUpscaledY}>
-            But definitely my favourite ones are ThreeJS and NextJS
+            But my favourites are definitely Three.js and Next.js
           </p>
           <p className={styles.textUpscaledY}>
-            If you want to learn more, check out my <a href="">Github Page</a>
+            Here's my <a href="">Github</a>!
           </p>
         </article>
       ),
@@ -131,17 +149,28 @@ export function ScreenContent({
             I am also really interested in ML and coding in general.
           </p>
           <p className={styles.textUpscaledY}>
-            esto se puede reducir pq en el de arriba ya pondre un poco de cursos
-            I have undergone several courses on machine learning and AI, and
-            I've also participated in many hackathons and jams.
-          </p>
-          <p className={styles.textUpscaledY}>
-            But all that it's too boring so if you're interested you can just
-            just check my <a href="">LinkedIn profile</a>
+            I have experience with python, and curretly I am learnign Rust
           </p>
         </article>
       ),
       2: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>
+            I love challenges and If there's a hackathon or a jam, I'll be
+            there!
+          </p>
+        </article>
+      ),
+      3: (
         <article
           className={`${styles.basicSlide}`}
           style={{
@@ -158,23 +187,57 @@ export function ScreenContent({
           <p className={styles.textUpscaledY}>
             We trained a neural network to detect different kinds of plants.
           </p>
+        </article>
+      ),
+      4: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <p className={styles.textUpscaledY}>
-            And depending on the specific plant needs and current weather and
+            Depending on the specific plant needs and current weather and
             humidity conditions, it was watered with just the right amount of
             water.
           </p>
-          <p className={styles.textUpscaledY}>
-            We also made like an evil version of Duolingo, where you had to
-            anwser different questions right to water your plant.
+          <p>
+            This was all automatic with an Arduino and a humidity sensor, so
+            healthy plants without needing to water it manually!
           </p>
         </article>
       ),
-      3: (
+      5: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>
+            We also made a game version, where when you answeredd correctly
+            questions about the environment, the watering mechanism would
+            trigger.
+          </p>
+          <p className={styles.textUpscaledY}>
+            Kinda like duolingo, but with plants!
+          </p>
+        </article>
+      ),
+      6: (
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/projects/notjustwaterdemo.mp4" autoPlay loop />
         </article>
       ),
-      4: (
+      7: (
         <article
           className={`${styles.basicSlide}`}
           style={{
@@ -190,22 +253,49 @@ export function ScreenContent({
             procedurally recreate faithful replicas of planets and stars
             discovered by the NASA
           </p>
+        </article>
+      ),
+      8: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <p className={styles.textUpscaledY}>
             We also developed what we called the "music of the stars": a
             positional sound system where every stellar body emited a
             disctincive sound depending on its mass and temperature.
           </p>
+        </article>
+      ),
+      9: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <p className={styles.textUpscaledY}>
-            The coolest part of the project was implementing VR!
+            We made it with Godot, and the coolest part of the project was
+            implementing VR!
           </p>
         </article>
       ),
-      5: (
+      10: (
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/projects/spacedemo.mp4" autoPlay loop />
         </article>
       ),
-      6: (
+      11: (
         <article
           className={`${styles.basicSlide}`}
           style={{
@@ -224,6 +314,23 @@ export function ScreenContent({
             I used a computer vision model to detect objects in real time and
             inform the user throgh TTS
           </p>
+          <p className={styles.textUpscaledY}>
+            I also implemented voice control and other cool features like face
+            detection and connection to an LLM with the environment as context
+          </p>
+        </article>
+      ),
+      12: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <p className={styles.textUpscaledY}>
             I also implemented voice control and other cool features like face
             detection and connection to an LLM with the environment as context
