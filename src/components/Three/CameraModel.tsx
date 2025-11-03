@@ -7,7 +7,7 @@ import { useFrame } from "@react-three/fiber";
 import { ScreenContent } from "./ScreenContent/ScreenContent";
 import { useSDCardModelStore } from "@/store/useSDCardModelStore";
 import { useCameraStore } from "@/store/useCameraStore";
-
+export const slidesLengths: Array<number> = [2, 2, 13, 6, 1];
 const CameraModel: React.FC<{
   translations: any;
 }> = ({ translations }) => {
@@ -34,8 +34,6 @@ const CameraModel: React.FC<{
 
   const [card, setCard] = useState(0);
   const [slide, setSlide] = useState(0);
-
-  const slidesLengths: Array<number> = [2, 2, 7, 6, 1];
 
   const handleButton1Click = (event: any) => {
     event.stopPropagation();

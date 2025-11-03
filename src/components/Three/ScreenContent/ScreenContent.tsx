@@ -1,6 +1,7 @@
 import React, { useState, useEffect, JSX } from "react";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
 import styles from "./ScreenContent.module.css";
+import { slidesLengths } from "../CameraModel";
 
 export function ScreenContent({
   card,
@@ -151,6 +152,7 @@ export function ScreenContent({
           <p className={styles.textUpscaledY}>
             I have experience with python, and curretly I am learnign Rust
           </p>
+          <p>I also want to learn C and shaders</p>
         </article>
       ),
       2: (
@@ -205,7 +207,7 @@ export function ScreenContent({
             humidity conditions, it was watered with just the right amount of
             water.
           </p>
-          <p>
+          <p className={styles.textUpscaledY}>
             This was all automatic with an Arduino and a humidity sensor, so
             healthy plants without needing to water it manually!
           </p>
@@ -314,10 +316,6 @@ export function ScreenContent({
             I used a computer vision model to detect objects in real time and
             inform the user throgh TTS
           </p>
-          <p className={styles.textUpscaledY}>
-            I also implemented voice control and other cool features like face
-            detection and connection to an LLM with the environment as context
-          </p>
         </article>
       ),
       12: (
@@ -333,7 +331,8 @@ export function ScreenContent({
         >
           <p className={styles.textUpscaledY}>
             I also implemented voice control and other cool features like face
-            detection and connection to an LLM with the environment as context
+            detection and connection to an LLM providing the objects detected in
+            the environment as context.
           </p>
         </article>
       ),
@@ -402,6 +401,9 @@ export function ScreenContent({
         </defs>
       </svg>
       {content || <></>}
+      <div className={styles.pagination}>
+        {card !== 5 ? `${slide + 1}/${slidesLengths[card]}` : null}
+      </div>
     </section>
   );
 }
