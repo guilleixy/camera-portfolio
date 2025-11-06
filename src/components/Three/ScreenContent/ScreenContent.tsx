@@ -177,7 +177,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/projects/notjustwater2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/projects/notjustwater4.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
