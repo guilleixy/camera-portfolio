@@ -116,7 +116,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/71.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -140,7 +140,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/80.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -160,7 +160,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/53.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -177,7 +177,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/projects/notjustwater2.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -196,7 +196,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/projects/notjustwater1.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -218,7 +218,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/projects/notjustwater3.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -244,7 +244,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/projects/exoviewer3.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -262,7 +262,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/projects/exoviewer2.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -280,7 +280,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/projects/exoviewer1.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -302,7 +302,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/projects/saight1.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -323,7 +323,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/projects/saight2.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
