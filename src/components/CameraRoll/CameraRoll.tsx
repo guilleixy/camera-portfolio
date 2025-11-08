@@ -86,7 +86,7 @@ export default function CameraRoll({ containerRef }: CameraRollProps) {
                     style={{
                       marginTop: item.marginTop,
                       opacity: 0,
-                      transition: "opacity 0.75s ease-in",
+                      transition: `opacity ${item.index * 0.01 + 0.7}s ease-in`,
                     }}
                     onLoad={(e) => {
                       e.currentTarget.style.opacity = "1";
