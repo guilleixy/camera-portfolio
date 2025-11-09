@@ -6,6 +6,7 @@ import gsap from "gsap";
 import Scene from "@/components/Three/Scene";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
 import { useCameraStore } from "@/store/useCameraStore";
+import { useSDCardModelStore } from "@/store/useSDCardModelStore";
 
 export default function Home() {
   const [isWebStarted, setIsWebStarted] = useState(false);
@@ -16,6 +17,7 @@ export default function Home() {
   const sceneRef = useRef<HTMLDivElement>(null);
   const cameraModelToggle = useCameraModelStore((s) => s.toggle);
   const cameraToggle = useCameraStore((s) => s.toggle);
+  const sdCardModelToggle = useSDCardModelStore((s) => s.toggle);
   useEffect(() => {
     if (headerRef.current) {
       headerRef.current.style.cursor = "none";
@@ -84,7 +86,11 @@ export default function Home() {
     setTimeout(() => {
       cameraModelToggle("introRotation");
       cameraToggle("backZoomIn");
-    }, 1200);
+    }, 1400);
+    setTimeout(() => {
+      sdCardModelToggle("intro");
+    }, 2000);
+
     timeoutRef.current = window.setTimeout(() => setIsWebStarted(true), 1200);
   };
   return (
