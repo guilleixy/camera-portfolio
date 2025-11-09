@@ -48,10 +48,10 @@ const CameraModel: React.FC<{
     }, 600);
     setTimeout(() => {
       cameraModelToggle("openCase");
-    }, 800);
+    }, 700);
     setTimeout(() => {
       cameraToggle("backZoomIn");
-    }, 1000);
+    }, 900);
     setTimeout(() => {
       setCard(1);
       setSlide(0);
@@ -71,10 +71,10 @@ const CameraModel: React.FC<{
     }, 600);
     setTimeout(() => {
       cameraModelToggle("openCase");
-    }, 680);
+    }, 700);
     setTimeout(() => {
       cameraToggle("backZoomIn");
-    }, 800);
+    }, 900);
     setTimeout(() => {
       setCard(2);
       setSlide(0);
@@ -94,10 +94,10 @@ const CameraModel: React.FC<{
     }, 600);
     setTimeout(() => {
       cameraModelToggle("openCase");
-    }, 800);
+    }, 700);
     setTimeout(() => {
       cameraToggle("backZoomIn");
-    }, 1000);
+    }, 900);
     setTimeout(() => {
       setCard(3);
       setSlide(0);
@@ -117,10 +117,10 @@ const CameraModel: React.FC<{
     }, 600);
     setTimeout(() => {
       cameraModelToggle("openCase");
-    }, 800);
+    }, 700);
     setTimeout(() => {
       cameraToggle("backZoomIn");
-    }, 1000);
+    }, 900);
     setTimeout(() => {
       setCard(4);
       setSlide(0);
@@ -210,83 +210,171 @@ const CameraModel: React.FC<{
 
     // Efecto de impulso en la cámara cuando la tapa llega a 0 (cerrada)
     if (cameraPivotRef.current && tapaRef.current) {
-      // Inicializar userData para el impulso
+      // Inicializar userData para el impulso (sin spring/velocidad)
       if (!cameraPivotRef.current.userData.impulse) {
         cameraPivotRef.current.userData.impulse = {
-          velocityX: 0,
-          velocityY: 0,
-          velocityRotY: 0,
           lastTapaState: animations.openCase,
           hasTriggered: false,
+          phase: "idle", // "idle" | "toTarget" | "return"
+          target: 0,
         };
       }
 
       const impulseData = cameraPivotRef.current.userData.impulse;
       const currentTapaRotation = tapaRef.current.rotation.z;
 
-      // Detectar cuando la tapa llega cerca de 0 (cerrada completamente)
+      // Detectar el momento de cierre (cuando la tapa está cerca de cerrada)
       if (
         !animations.openCase &&
-        Math.abs(currentTapaRotation - tapaCerradaRotX) < 0.1 && // Cuando está cerca de 0
+        Math.abs(currentTapaRotation - tapaCerradaRotX) < 0.1 &&
         !impulseData.hasTriggered
       ) {
-        // Aplicar impulso cuando la tapa está cerrada
-        impulseData.velocityX = -0.03; // Impulso hacia la izquierda
-        impulseData.velocityY = 0.01; // Pequeño impulso hacia arriba
-        impulseData.velocityRotY = -0.02; // Rotación en Y
+        // En lugar de teletransportar, iniciamos una pequeña animación suave:
         impulseData.hasTriggered = true;
+        impulseData.phase = "toTarget";
+        impulseData.target = -0.1; // desplazamiento objetivo (pequeño)
       }
 
       // Resetear el trigger cuando se abre la tapa
       if (animations.openCase) {
         impulseData.hasTriggered = false;
+        impulseData.phase = "idle";
+        impulseData.target = 0;
       }
 
-      // Aplicar física del impulso con rebote
-      const restoreForceX = -cameraPivotRef.current.position.x * 0.1; // Fuerza de restauración
-      const restoreForceY = -cameraPivotRef.current.position.y * 0.1;
-      const restoreForceRotY = -cameraPivotRef.current.rotation.z * 0.1;
+      // Aplicar la animación suave (lerp hacia target y luego volver a 0)
+      const curRot = cameraPivotRef.current.rotation.z;
 
-      const dampingFactor = 0.9; // Factor de amortiguación
+      if (impulseData.phase === "toTarget") {
+        cameraPivotRef.current.rotation.z =
+          curRot + (impulseData.target - curRot) * 0.4; // más rápido hacia el objetivo
+        if (
+          Math.abs(cameraPivotRef.current.rotation.z - impulseData.target) <
+          0.001
+        ) {
+          impulseData.phase = "return";
+          impulseData.target = 0;
+        }
+      } else if (impulseData.phase === "return") {
+        cameraPivotRef.current.rotation.z =
+          curRot + (impulseData.target - curRot) * 0.3; // volver despacio a neutro
+        if (Math.abs(cameraPivotRef.current.rotation.z - 0) < 0.001) {
+          impulseData.phase = "idle";
+          impulseData.target = 0;
+        }
+      } else {
+        // Si está idle, suavizamos hacia 0 por seguridad
+        cameraPivotRef.current.rotation.z = curRot + (0 - curRot) * 0.2;
+      }
 
-      impulseData.velocityRotY =
-        (impulseData.velocityRotY + restoreForceRotY) * dampingFactor;
-
-      cameraPivotRef.current.rotation.z += impulseData.velocityRotY;
-
+      // Limitar rotación para evitar valores extremos
       cameraPivotRef.current.rotation.z = Math.max(
         -0.5,
         Math.min(0.5, cameraPivotRef.current.rotation.z)
       );
     }
 
+    if (cameraRef.current && animations.introRotation) {
+      const curRotY = cameraRef.current.rotation.y;
+      const targetRotY = 0;
+      cameraRef.current.rotation.y = curRotY + (targetRotY - curRotY) * 0.2;
+    }
+
+    if (cameraRef.current && animations.introPosition) {
+      // target and spring state init
+      const targetPosY = 0;
+
+      if (!cameraRef.current.userData.spring) {
+        cameraRef.current.userData.spring = {
+          vel: 0,
+          crossings: 0,
+          prevDiff: cameraRef.current.position.y - targetPosY,
+          done: false,
+        };
+      }
+
+      const s = cameraRef.current.userData.spring;
+
+      // if already finished, keep at target
+      if (s.done) {
+        cameraRef.current.position.y = targetPosY;
+      } else {
+        // Tunable spring params — lower stiffness => slower motion,
+        // damping controls decay (higher = quicker damping).
+        const stiffness = 100; // try 4..12
+        const damping = 10; // try 2..6
+
+        const curY = cameraRef.current.position.y;
+        const diff = curY - targetPosY;
+
+        // simple harmonic oscillator: a = -k * x - c * v
+        const accel = -stiffness * diff - damping * s.vel;
+
+        // integrate
+        s.vel += accel * delta;
+        cameraRef.current.position.y += s.vel * delta;
+
+        // count zero-crossings (sign changes of diff) to track oscillations
+        if (s.prevDiff * diff < 0 && Math.abs(s.prevDiff) > 0.1) {
+          s.crossings += 1;
+        }
+        s.prevDiff = diff;
+
+        // stop after ~2 full oscillations (down+up twice -> ~4 crossings)
+        if (s.crossings >= 4) {
+          cameraRef.current.position.y = targetPosY;
+          s.vel = 0;
+          s.done = true;
+        }
+
+        // safety snap when very close
+        if (
+          Math.abs(cameraRef.current.position.y - targetPosY) < 0.001 &&
+          Math.abs(s.vel) < 0.001
+        ) {
+          cameraRef.current.position.y = targetPosY;
+          s.vel = 0;
+          s.done = true;
+        }
+      }
+    } else {
+      // reset spring state when introPosition becomes false so it can retrigger later
+      if (cameraRef.current && cameraRef.current.userData.spring) {
+        cameraRef.current.userData.spring.done = false;
+        cameraRef.current.userData.spring.crossings = 0;
+        cameraRef.current.userData.spring.vel = 0;
+        cameraRef.current.userData.spring.prevDiff =
+          cameraRef.current.position.y;
+      }
+    }
+
     const targetZlens2 = animations.extendLens
-      ? lens2ExtendidoZ
-      : lens2RetraidoZ;
+      ? lens2RetraidoZ
+      : lens2ExtendidoZ;
     const targetZlens3 = animations.extendLens
-      ? lens3ExtendidoZ
-      : lens3RetraidoZ;
+      ? lens3RetraidoZ
+      : lens3ExtendidoZ;
     const targetZlensInnenHule = animations.extendLens
-      ? lensInnenHuleExtendidoZ
-      : lensInnenHuleRetraidoZ;
+      ? lensInnenHuleRetraidoZ
+      : lensInnenHuleExtendidoZ;
     const targetZlensFenster = animations.extendLens
-      ? lensFensterExtendidoZ
-      : lensFensterRetraidoZ;
+      ? lensFensterRetraidoZ
+      : lensFensterExtendidoZ;
     const targetZlensGlass = animations.extendLens
-      ? lensGlassExtendidoZ
-      : lensGlassRetraidoZ;
+      ? lensGlassRetraidoZ
+      : lensGlassExtendidoZ;
     const targetZlensVorhang_1 = animations.extendLens
-      ? lensVorhangExtendidoZ
-      : lensVorhangRetraidoZ;
+      ? lensVorhangRetraidoZ
+      : lensVorhangExtendidoZ;
     const targetZlensVorhang_2 = animations.extendLens
-      ? lensVorhangExtendidoZ
-      : lensVorhangRetraidoZ;
+      ? lensVorhangRetraidoZ
+      : lensVorhangExtendidoZ;
     const targetScaleLensVorhang_1 = animations.extendLens
-      ? lensVorhangAbierto
-      : lensVorhangCerrado;
+      ? lensVorhangCerrado
+      : lensVorhangAbierto;
     const targetScaleLensVorhang_2 = animations.extendLens
-      ? lensVorhangAbierto
-      : lensVorhangCerrado;
+      ? lensVorhangCerrado
+      : lensVorhangAbierto;
 
     if (
       lens2_2Ref.current &&
@@ -394,10 +482,10 @@ const CameraModel: React.FC<{
     >
       {/* Grupo de la cámara - offset para compensar la posición del pivot */}
       <group
-        rotation={[0, 0, 0]}
+        rotation={[0, Math.PI, 0]}
         scale={0.5}
         ref={cameraRef}
-        position={[-100, 0, 0]} // Offset para compensar la posición del pivot
+        position={[-100, 200, 0]} // Offset para compensar la posición del pivot
       >
         {Object.values(nodes)
           .filter((node: any) => node.type === "Mesh")

@@ -11,7 +11,12 @@ export default function SDModel() {
   const sdCardInY = 40;
   const sdCardOutY = -80;
   useFrame(() => {
-    const targetY = animations.changeSD ? sdCardOutY : sdCardInY;
+    let targetY;
+    if (animations.intro) {
+      targetY = sdCardInY + 20;
+    } else {
+      targetY = animations.changeSD ? sdCardOutY : sdCardInY;
+    }
     if (sdCardBodyRef.current) {
       const curlYsdCard = sdCardBodyRef.current.position.y;
       const curlXsdCard = sdCardBodyRef.current.position.x;
@@ -28,8 +33,6 @@ export default function SDModel() {
       {Object.values(nodes)
         .filter((node: any) => node.type === "Mesh")
         .map((mesh: any) => {
-          console.log(mesh.name);
-
           return (
             <mesh
               key={mesh.uuid}

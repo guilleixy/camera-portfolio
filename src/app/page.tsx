@@ -4,8 +4,8 @@ import CameraRoll from "@/components/CameraRoll/CameraRoll";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import Scene from "@/components/Three/Scene";
-import CameraControls from "@/components/Three/CameraControls";
-import RealCameraControls from "@/components/Three/RealCameraControls";
+import { useCameraModelStore } from "@/store/useCameraModelStore";
+import { useCameraStore } from "@/store/useCameraStore";
 
 export default function Home() {
   const [isWebStarted, setIsWebStarted] = useState(false);
@@ -13,6 +13,8 @@ export default function Home() {
   const cameraRollRef = useRef<HTMLDivElement>(null);
   const customCursorRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<number | null>(null);
+  const cameraModelToggle = useCameraModelStore((s) => s.toggle);
+  const cameraToggle = useCameraStore((s) => s.toggle);
   useEffect(() => {
     if (headerRef.current) {
       headerRef.current.style.cursor = "none";
@@ -66,6 +68,19 @@ export default function Home() {
     if (customCursorRef.current) {
       gsap.to(customCursorRef.current, { opacity: 0, duration: 0.4 });
     }
+    setTimeout(() => {
+      cameraModelToggle("introPosition");
+    }, 2000);
+    setTimeout(() => {
+      cameraModelToggle("openCase");
+    }, 2500);
+    setTimeout(() => {
+      cameraModelToggle("openCase");
+    }, 300);
+    setTimeout(() => {
+      cameraModelToggle("introRotation");
+      cameraToggle("backZoomIn");
+    }, 4000);
     timeoutRef.current = window.setTimeout(() => setIsWebStarted(true), 1200);
   };
   return (
@@ -77,9 +92,14 @@ export default function Home() {
       <div ref={customCursorRef} className={styles.cursor}>
         click to start!
       </div>
-      {/* <Scene /> */}
+      <Scene />
       {/* <CameraControls /> */}
       {/* <RealCameraControls /> */}
+      <div className={styles.links}>
+        <a href="">cv</a>
+        <a href="">linkedin</a>
+        <a href="">blog</a>
+      </div>
     </div>
   );
 }

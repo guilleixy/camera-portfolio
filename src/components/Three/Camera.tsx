@@ -20,12 +20,12 @@ export default function Camera() {
         targetPosition = positionFront;
         targetRotation = rotationFront;
       } else if (animations.backZoomIn) {
-        targetPosition = positionBackZoomOut;
-        targetRotation = rotationBackZoomOut;
-      } else {
-        // backZoomIn(default)
         targetPosition = positionBackZoomIn;
         targetRotation = rotationBackZoomIn;
+      } else {
+        // backZoomIn(default)
+        targetPosition = positionBackZoomOut;
+        targetRotation = rotationBackZoomOut;
       }
 
       // Animación suave de posición
@@ -41,12 +41,12 @@ export default function Camera() {
         currentPosition.z + (targetPosition[2] - currentPosition.z) * 0.12;
 
       // Interpolación de rotación
-      currentRotation.x =
-        currentRotation.x + (targetRotation[0] - currentRotation.x) * 0.12;
+      // currentRotation.x =
+      //   currentRotation.x + (targetRotation[0] - currentRotation.x) * 0.12;
       currentRotation.y =
         currentRotation.y + (targetRotation[1] - currentRotation.y) * 0.12;
-      currentRotation.z =
-        currentRotation.z + (targetRotation[2] - currentRotation.z) * 0.12;
+      // currentRotation.z =
+      //   currentRotation.z + (targetRotation[2] - currentRotation.z) * 0.12;
     }
   });
   return (
