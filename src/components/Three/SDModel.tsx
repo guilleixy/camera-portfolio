@@ -26,8 +26,8 @@ export default function SDModel() {
   return (
     <group
       rotation={[Math.PI / 2, 0, Math.PI]}
-      scale={0.5}
-      position={[-38, 40, 0]}
+      scale={0.4}
+      position={[-38, 200, 0]}
       ref={sdCardBodyRef}
     >
       {Object.values(nodes)

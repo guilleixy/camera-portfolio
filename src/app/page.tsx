@@ -13,6 +13,7 @@ export default function Home() {
   const cameraRollRef = useRef<HTMLDivElement>(null);
   const customCursorRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<number | null>(null);
+  const sceneRef = useRef<HTMLDivElement>(null);
   const cameraModelToggle = useCameraModelStore((s) => s.toggle);
   const cameraToggle = useCameraStore((s) => s.toggle);
   useEffect(() => {
@@ -68,19 +69,22 @@ export default function Home() {
     if (customCursorRef.current) {
       gsap.to(customCursorRef.current, { opacity: 0, duration: 0.4 });
     }
-    setTimeout(() => {
-      cameraModelToggle("introPosition");
-    }, 2000);
-    setTimeout(() => {
-      cameraModelToggle("openCase");
-    }, 2500);
-    setTimeout(() => {
-      cameraModelToggle("openCase");
-    }, 300);
+    // setTimeout(() => {
+    //   cameraModelToggle("introPosition");
+    // }, 2000);
+    // setTimeout(() => {
+    //   cameraModelToggle("openCase");
+    // }, 2500);
+    // setTimeout(() => {
+    //   cameraModelToggle("openCase");
+    // }, 300);
+    if (sceneRef.current) {
+      sceneRef.current.style.top = "0";
+    }
     setTimeout(() => {
       cameraModelToggle("introRotation");
       cameraToggle("backZoomIn");
-    }, 4000);
+    }, 1200);
     timeoutRef.current = window.setTimeout(() => setIsWebStarted(true), 1200);
   };
   return (
@@ -92,7 +96,7 @@ export default function Home() {
       <div ref={customCursorRef} className={styles.cursor}>
         click to start!
       </div>
-      <Scene />
+      <Scene ref={sceneRef} />
       {/* <CameraControls /> */}
       {/* <RealCameraControls /> */}
       <div className={styles.links}>

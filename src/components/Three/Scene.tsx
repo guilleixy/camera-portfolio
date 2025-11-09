@@ -1,7 +1,7 @@
 "use client";
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import React, { forwardRef, Suspense } from "react";
 import CameraModel from "./CameraModel";
 import styles from "./Scene.module.css";
 import SDModel from "./SDModel";
@@ -15,7 +15,7 @@ import {
   Pixelation,
 } from "@react-three/postprocessing";
 
-export default function Scene() {
+const Scene = forwardRef<HTMLDivElement, {}>((props, ref) => {
   const t = useTranslations("Cards");
   const translations = {
     slide0Title: t("0.Slides.0.presentation"),
@@ -27,8 +27,8 @@ export default function Scene() {
     slide1Index3: t("0.Slides.1.index.3"),
   };
   return (
-    <>
-      <Canvas className={styles.canvas} gl={{ alpha: true }}>
+    <div className={styles.canvas} ref={ref}>
+      <Canvas gl={{ alpha: true }}>
         <Suspense fallback={null}>
           <Camera />
           <Environment
@@ -36,16 +36,12 @@ export default function Scene() {
             backgroundIntensity={0}
             environmentIntensity={0.7}
           />
-          {/* <OrbitControls minDistance={100} /> */}
           <CameraModel translations={translations} />
           <SDModel />
-          {/* <EffectComposer>
-            <Pixelation granularity={5} />
-            <Noise opacity={0.1} />
-            <ChromaticAberration offset={[0.002, 0.002]} />
-          </EffectComposer> */}
         </Suspense>
       </Canvas>
-    </>
+    </div>
   );
-}
+});
+
+export default Scene;

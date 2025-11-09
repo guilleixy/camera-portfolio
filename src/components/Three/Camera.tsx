@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 export default function Camera() {
   const animations = useCameraStore((s) => s.animations);
   const cameraRef = useRef<any>(null);
-  const positionBackZoomOut = [0, 30, -150];
+  const positionBackZoomOut = [0, 30, -200];
   const rotationBackZoomOut = [0, Math.PI, 0];
   const positionBackZoomIn = [30, 35, -80];
   const rotationBackZoomIn = [0, Math.PI, 0];

@@ -209,7 +209,7 @@ const CameraModel: React.FC<{
     }
 
     // Efecto de impulso en la cámara cuando la tapa llega a 0 (cerrada)
-    if (cameraPivotRef.current && tapaRef.current) {
+    if (cameraPivotRef.current && tapaRef.current && 0 === 1) {
       // Inicializar userData para el impulso (sin spring/velocidad)
       if (!cameraPivotRef.current.userData.impulse) {
         cameraPivotRef.current.userData.impulse = {
@@ -485,7 +485,7 @@ const CameraModel: React.FC<{
         rotation={[0, Math.PI, 0]}
         scale={0.5}
         ref={cameraRef}
-        position={[-100, 200, 0]} // Offset para compensar la posición del pivot
+        position={[-100, 0, 0]} // Offset para compensar la posición del pivot
       >
         {Object.values(nodes)
           .filter((node: any) => node.type === "Mesh")
@@ -493,7 +493,7 @@ const CameraModel: React.FC<{
             const meshName = mesh.name;
             const ref = getRefForMesh(meshName);
             const clickHandler = getClickHandler(meshName);
-            console.log(meshName);
+            // console.log(meshName);
             // Caso especial para la pantalla
             if (meshName === "Korpus_7") {
               return (
