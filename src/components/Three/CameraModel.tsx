@@ -11,7 +11,7 @@ export const slidesLengths: Array<number> = [2, 2, 13, 6, 1];
 const CameraModel: React.FC<{
   translations: any;
 }> = ({ translations }) => {
-  const { nodes, materials } = useGLTF("/models/canoncajita8.glb");
+  const { nodes, materials } = useGLTF("/models/canontestcajita11.glb");
 
   const cameraToggle = useCameraStore((s) => s.toggle);
   const sdCardToggle = useSDCardModelStore((s) => s.toggle);
