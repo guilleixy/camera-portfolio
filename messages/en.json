@@ -7,13 +7,7 @@
           "controls": "To move between slides, use the arrow keys to your right."
         },
         "1": {
-          "controls": "You can select the SD card with the buttons under the screen. Each SD contains different stuff.",
-          "index": {
-            "0": "Card1: Me esto quitarlo . las imagenes encima de los botones será suficiente leyenda",
-            "1": "Card2: Tech",
-            "2": "Card3: Design",
-            "3": "Card4: Gallery"
-          }
+          "controls": "You can select the SD card with the buttons under the screen. Each SD contains different stuff."
         }
       }
     },

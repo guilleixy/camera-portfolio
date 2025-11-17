@@ -47,7 +47,7 @@ export default function Camera() {
       }
 
       // Mouse parallax offset (adjust multiplier for more/less movement)
-      const mouseInfluence = 0.4; // Adjust this value to control intensity
+      const mouseInfluence = 0.3; // Adjust this value to control intensity
       const mouseOffsetX = -mousePosition.x * mouseInfluence;
       const mouseOffsetY = mousePosition.y * mouseInfluence;
 

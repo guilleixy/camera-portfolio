@@ -1,7 +1,6 @@
 .root {
   /* height: 125px;
   width: 190px; */
-  /* border-radius: 4px; */
   height: 131px;
   width: 196px;
   border-radius: 4px;
@@ -101,5 +100,15 @@
 }
 
 .textUpscaledY {
+  transform: scaleY(1.3);
+}
+
+.snapchatBar {
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+  left: 0px;
   transform: scaleY(1.3);
 }

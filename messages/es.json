@@ -7,13 +7,7 @@
           "controls": "To move between slides, use the arrow keys to your right."
         },
         "1": {
-          "controls": "You can select the SD card with the buttons under the screen. Each SD contains different information.",
-          "index": {
-            "0": "Me",
-            "1": "Stack and Projects",
-            "3": "Design background",
-            "4": "Gallery"
-          }
+          "controls": "You can select the SD card with the buttons under the screen. Each SD contains different information."
         },
         "2": {}
       }

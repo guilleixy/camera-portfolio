@@ -19,7 +19,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/1.jpg')",
+              "linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url('/images/camera_roll/93.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -34,19 +34,13 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/9.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         >
           <p className={styles.textUpscaledY}>{translations.slide1Controls}</p>
-          <ul className={styles.textUpscaledY}>
-            <li>{translations.slide1Index0}</li>
-            <li>{translations.slide1Index1}</li>
-            <li>{translations.slide1Index2}</li>
-            <li>{translations.slide1Index3}</li>
-          </ul>
         </article>
       ),
     },
@@ -56,7 +50,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/images/camera_roll/70.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -65,10 +59,6 @@ export function ScreenContent({
           <p className={styles.textUpscaledY}>
             I am a 23 year old developer from Zaragoza, Spain
           </p>
-          <p className={styles.textUpscaledY}>
-            I am currenly studying computer science while I work as a
-            programmer.
-          </p>
         </article>
       ),
       1: (
@@ -76,16 +66,15 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/55.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         >
-          <p>I also have an Associate Degree in web development.</p>
-          <p>
-            And I've also undergone a lot of courses from Google,
-            DeepLearning.AI about ML, UX and many more themes!{" "}
+          <p className={styles.textUpscaledY}>
+            I am currenly studying computer science while I work as a
+            programmer.
           </p>
         </article>
       ),
@@ -94,13 +83,32 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/2.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/1.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         >
-          <p className={styles.textUpscaledY}>I really like art!</p>
+          <p className={styles.textUpscaledY}>
+            I also have an Associate Degree in web development.
+          </p>
+          <p className={styles.textUpscaledY}>
+            And I've undergone several courses, mainly about ML and UX.
+          </p>
+        </article>
+      ),
+      3: (
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/58.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <p className={styles.textUpscaledY}>My other passion is art.</p>
           <p className={styles.textUpscaledY}>
             I play bass and I like books and photography (obviously)
           </p>
@@ -116,7 +124,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/71.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/27.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -140,7 +148,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/80.jpg')",
+              "linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('/images/camera_roll/71.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -152,7 +160,6 @@ export function ScreenContent({
           <p className={styles.textUpscaledY}>
             I have experience with python, and curretly I am learnign Rust
           </p>
-          <p>I also want to learn C and shaders</p>
         </article>
       ),
       2: (
@@ -160,15 +167,18 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/53.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/45.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         >
           <p className={styles.textUpscaledY}>
-            I love challenges and If there's a hackathon or a jam, I'll be
+            I love challenges and if there's a hackathon or a jam, I'll be
             there!
+          </p>
+          <p className={styles.textUpscaledY}>
+            Here are some of the projects I've worked on
           </p>
         </article>
       ),
@@ -361,26 +371,37 @@ export function ScreenContent({
       1: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_lleida.png" alt="" />
+          <div className={`${styles.snapchatBar}`}>
+            some posters for concerts!
+          </div>
         </article>
       ),
       2: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_lleida2.png" alt="" />
+          <div className={`${styles.snapchatBar}`}>
+            some posters for concerts!
+          </div>
         </article>
       ),
       3: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_gira.png" alt="" />
+          <div className={`${styles.snapchatBar}`}>
+            some posters for concerts!
+          </div>
         </article>
       ),
       4: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/carretera_raw.png" alt="" />
+          <div className={`${styles.snapchatBar}`}>a single cover!</div>
         </article>
       ),
       5: (
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/design/canvas_carretera.mp4" autoPlay loop />
+          <div className={`${styles.snapchatBar}`}>and its Spotify canvas</div>
         </article>
       ),
     },
