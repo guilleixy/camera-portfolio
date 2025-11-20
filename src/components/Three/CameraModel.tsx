@@ -11,7 +11,7 @@ export const slidesLengths: Array<number> = [2, 4, 13, 6, 1];
 const CameraModel: React.FC<{
   translations: any;
 }> = ({ translations }) => {
-  const { nodes, materials } = useGLTF("/models/canontestcajita11.glb");
+  const { nodes, materials } = useGLTF("/models/canontestcajita12.glb");
 
   const cameraToggle = useCameraStore((s) => s.toggle);
   const sdCardToggle = useSDCardModelStore((s) => s.toggle);
@@ -456,5 +456,5 @@ const CameraModel: React.FC<{
   );
 };
 
-useGLTF.preload("/models/canontestcajita6.glb");
+useGLTF.preload("/models/canontestcajita12.glb");
 export default CameraModel;
