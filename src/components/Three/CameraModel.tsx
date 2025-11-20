@@ -7,7 +7,7 @@ import { useFrame } from "@react-three/fiber";
 import { ScreenContent } from "./ScreenContent/ScreenContent";
 import { useSDCardModelStore } from "@/store/useSDCardModelStore";
 import { useCameraStore } from "@/store/useCameraStore";
-export const slidesLengths: Array<number> = [2, 6, 13, 6, 1];
+export const slidesLengths: Array<number> = [2, 4, 13, 6, 1];
 const CameraModel: React.FC<{
   translations: any;
 }> = ({ translations }) => {

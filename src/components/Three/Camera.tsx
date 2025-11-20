@@ -2,10 +2,11 @@ import { useCameraStore } from "@/store/useCameraStore";
 import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
+import * as THREE from "three";
 
 export default function Camera() {
   const animations = useCameraStore((s) => s.animations);
-  const cameraRef = useRef<any>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { viewport } = useThree();
 

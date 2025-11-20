@@ -90,10 +90,8 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            I also have an Associate Degree in web development.
-          </p>
-          <p className={styles.textUpscaledY}>
-            And I've undergone several courses, mainly about ML and UX.
+            I also have an Associate Degree in web development and i have
+            undergone a lot of courses, mainly about ML and UX.
           </p>
         </article>
       ),
@@ -108,12 +106,9 @@ export function ScreenContent({
             backgroundRepeat: "no-repeat",
           }}
         >
-          <p className={styles.textUpscaledY}>My other passion is art.</p>
           <p className={styles.textUpscaledY}>
-            I play bass and I like books and photography (obviously)
-          </p>
-          <p className={styles.textUpscaledY}>
-            Music is a big part of my life, and my latest obsession has been:{" "}
+            My other passion is art in any form. I love music, designing stuff
+            and photography (obviously)
           </p>
         </article>
       ),
@@ -132,14 +127,14 @@ export function ScreenContent({
         >
           <h3 className={styles.textUpscaledY}>My web stack</h3>
           <p className={styles.textUpscaledY}>
-            I've worked with a broad range of technologies, both front and
+            I&apos;ve worked with a broad range of technologies, both front and
             backend.
           </p>
           <p className={styles.textUpscaledY}>
             But my favourites are definitely Three.js and Next.js
           </p>
           <p className={styles.textUpscaledY}>
-            Here's my <a href="">Github</a>!
+            Here&apos;s my <a href="">Github</a>!
           </p>
         </article>
       ),
@@ -158,7 +153,7 @@ export function ScreenContent({
             I am also really interested in ML and coding in general.
           </p>
           <p className={styles.textUpscaledY}>
-            I have experience with python, and curretly I am learnign Rust
+            I have experience with Python, and curretly I am learnign Rust.
           </p>
         </article>
       ),
@@ -174,11 +169,11 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            I love challenges and if there's a hackathon or a jam, I'll be
-            there!
+            I love challenges and if there&apos;s a hackathon or a jam,
+            I&apos;ll be there!
           </p>
           <p className={styles.textUpscaledY}>
-            Here are some of the projects I've worked on
+            Here are some of the projects I&apos;ve worked on:
           </p>
         </article>
       ),
@@ -219,7 +214,7 @@ export function ScreenContent({
           </p>
           <p className={styles.textUpscaledY}>
             This was all automatic with an Arduino and a humidity sensor, so
-            healthy plants without needing to water it manually!
+            healthy plants without having to water them manually!
           </p>
         </article>
       ),
@@ -247,6 +242,9 @@ export function ScreenContent({
       6: (
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/projects/notjustwaterdemo.mp4" autoPlay loop />
+          <div className={`${styles.snapchatBar}`}>
+            The watering system in action!
+          </div>
         </article>
       ),
       7: (
@@ -305,6 +303,9 @@ export function ScreenContent({
       10: (
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/projects/spacedemo.mp4" autoPlay loop />
+          <div className={`${styles.snapchatBar}`}>
+            It&apos;s not the same without music!
+          </div>
         </article>
       ),
       11: (
@@ -361,10 +362,10 @@ export function ScreenContent({
         >
           <p className={styles.textUpscaledY}>
             Besides programming, I also like to design, animate or just create
-            stuff
+            stuff.
           </p>
           <p className={styles.textUpscaledY}>
-            Check out some of the things I've made
+            I play bass in a band and design our posters and covers.
           </p>
         </article>
       ),
@@ -387,21 +388,21 @@ export function ScreenContent({
       3: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_gira.png" alt="" />
-          <div className={`${styles.snapchatBar}`}>
-            some posters for concerts!
-          </div>
+          <div className={`${styles.snapchatBar}`}>our first tour poster!</div>
         </article>
       ),
       4: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/carretera_raw.png" alt="" />
-          <div className={`${styles.snapchatBar}`}>a single cover!</div>
+          <div className={`${styles.snapchatBar}`}>a single cover</div>
         </article>
       ),
       5: (
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/design/canvas_carretera.mp4" autoPlay loop />
-          <div className={`${styles.snapchatBar}`}>and its Spotify canvas</div>
+          <div className={`${styles.snapchatBar}`}>
+            and it&apos;s visualizer with synced movement
+          </div>
         </article>
       ),
     },
