@@ -1,6 +1,6 @@
 {
   "Cards": {
-    "0": {
+    "Intro": {
       "Slides": {
         "0": {
           "presentation": "Hi! I am Guille :)",
@@ -11,15 +11,102 @@
         }
       }
     },
+    "0": {
+      "Slides": {
+        "0": {
+          "text": "I am a 23 year old developer from Zaragoza, Spain"
+        },
+        "1": {
+          "text": "I am currenly studying computer science while I work as a programmer."
+        },
+        "2": {
+          "text": "I also have an Associate Degree in web development and i have undergone a lot of courses, mainly about ML and UX."
+        },
+        "3": {
+          "text": "My other passion is art in any form. I love music, designing stuff and photography (obviously)."
+        }
+      }
+    },
     "1": {
       "Slides": {
         "0": {
           "title": "My web stack",
-          "p1": "",
-          "p2": "",
-          "githubCTA": ""
+          "text1": "I've worked with a broad range of technologies, both front and backend.",
+          "text2": "But my favourites are definitely Three.js and Next.js",
+          "githubCTA": "Here's my "
         },
-        "1": {}
+        "1": {
+          "text1": "I am also really interested in ML and coding in general.",
+          "text2": "I have experience with Python, and curretly I am learnign Rust."
+        },
+        "2": {
+          "text1": "I love challenges and if there's a hackathon or a jam, I'll be there!",
+          "text2": "Here are some of the projects I've worked on:"
+        },
+        "3": {
+          "text1": "In my last hackathon I worked on a smart watering system.",
+          "text2": "We trained a neural network to detect different kinds of plants."
+        },
+        "4": {
+          "text1": "Depending on the specific plant needs and current weather and humidity conditions, it was watered with just the right amount of water.",
+          "text2": "This was all automatic with an Arduino and a humidity sensor, so healthy plants without having to water them manually!"
+        },
+        "5": {
+          "text1": "We also made a game version, where when you answeredd correctly questions about the environment, the watering mechanism would trigger.",
+          "text2": "Kinda like duolingo, but with plants!"
+        },
+        "6": {
+          "text": "The watering system in action!"
+        },
+        "7": {
+          "text": "I also worked on a exopanetary systems visualizer able to procedurally recreate faithful replicas of planets and stars discovered by the NASA"
+        },
+        "8": {
+          "text": "We also developed what we called the 'music of the stars': a positional sound system where every stellar body emited a disctincive sound depending on its mass and temperature."
+        },
+        "9": {
+          "text": "We made it with Godot, and the coolest part of the project was implementing VR!"
+        },
+        "10": {
+          "text": "It's not the same without sound!"
+        },
+        "11": {
+          "text1": "One of my first 'big' projects was saight: an app to help people with visual impediments to interact with their surroundings",
+          "text2": "I used a computer vision model to detect objects in real time and inform the user throgh TTS"
+        },
+        "12": {
+          "text": "I also implemented voice control and other cool features like face detection and connection to an LLM providing the objects detected in the environment as context."
+        }
+      }
+    },
+    "2": {
+      "Slides": {
+        "0": {
+          "text1": "Besides programming, I also like to design, animate or just create stuff.",
+          "text2": "I play bass in a band and design our posters and covers."
+        },
+        "1": {
+          "text": "some posters for concerts!"
+        },
+        "2": {
+          "text": "some posters for concerts!"
+        },
+        "3": {
+          "text": "our first tour poster!"
+        },
+        "4": {
+          "text": "a single cover"
+        },
+        "5": {
+          "text": "and it's visualizer with synced movement"
+        }
+      }
+    },
+    "3": {
+      "Slides": {
+        "0": {
+          "text": "Madrid!"
+        }
       }
     }
   }

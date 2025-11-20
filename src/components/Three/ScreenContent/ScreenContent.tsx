@@ -25,8 +25,12 @@ export function ScreenContent({
             backgroundRepeat: "no-repeat",
           }}
         >
-          <h3 className={styles.textUpscaledY}>{translations.slide0Title}</h3>
-          <p className={styles.textUpscaledY}>{translations.slide0Controls}</p>
+          <h3 className={styles.textUpscaledY}>
+            {translations.introSlide0Title}
+          </h3>
+          <p className={styles.textUpscaledY}>
+            {translations.introSlide0Controls}
+          </p>
         </article>
       ),
       1: (
@@ -40,7 +44,9 @@ export function ScreenContent({
             backgroundRepeat: "no-repeat",
           }}
         >
-          <p className={styles.textUpscaledY}>{translations.slide1Controls}</p>
+          <p className={styles.textUpscaledY}>
+            {translations.introSlide1Controls}
+          </p>
         </article>
       ),
     },
@@ -56,9 +62,7 @@ export function ScreenContent({
             backgroundRepeat: "no-repeat",
           }}
         >
-          <p className={styles.textUpscaledY}>
-            I am a 23 year old developer from Zaragoza, Spain
-          </p>
+          <p className={styles.textUpscaledY}>{translations.card0Slide0Text}</p>
         </article>
       ),
       1: (
@@ -72,10 +76,7 @@ export function ScreenContent({
             backgroundRepeat: "no-repeat",
           }}
         >
-          <p className={styles.textUpscaledY}>
-            I am currenly studying computer science while I work as a
-            programmer.
-          </p>
+          <p className={styles.textUpscaledY}>{translations.card0Slide1Text}</p>
         </article>
       ),
       2: (
@@ -89,10 +90,7 @@ export function ScreenContent({
             backgroundRepeat: "no-repeat",
           }}
         >
-          <p className={styles.textUpscaledY}>
-            I also have an Associate Degree in web development and i have
-            undergone a lot of courses, mainly about ML and UX.
-          </p>
+          <p className={styles.textUpscaledY}>{translations.card0Slide2Text}</p>
         </article>
       ),
       3: (
@@ -107,8 +105,7 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            My other passion is art in any form. I love music, designing stuff
-            and photography (obviously)
+            {translations.cards0Slide3Text}
           </p>
         </article>
       ),
@@ -125,16 +122,18 @@ export function ScreenContent({
             backgroundRepeat: "no-repeat",
           }}
         >
-          <h3 className={styles.textUpscaledY}>My web stack</h3>
+          <h3 className={styles.textUpscaledY}>
+            {translations.cards1Slide0Title}
+          </h3>
           <p className={styles.textUpscaledY}>
-            I&apos;ve worked with a broad range of technologies, both front and
-            backend.
+            {translations.cards1Slide0Text1}
           </p>
           <p className={styles.textUpscaledY}>
-            But my favourites are definitely Three.js and Next.js
+            {translations.cards1Slide0Text2}
           </p>
           <p className={styles.textUpscaledY}>
-            Here&apos;s my <a href="">Github</a>!
+            {translations.cards1Slide0GithubCTA}
+            <a href="">Github</a>!
           </p>
         </article>
       ),
@@ -150,10 +149,10 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            I am also really interested in ML and coding in general.
+            {translations.cards1Slide1Text1}
           </p>
           <p className={styles.textUpscaledY}>
-            I have experience with Python, and curretly I am learnign Rust.
+            {translations.cards1Slide1Text2}
           </p>
         </article>
       ),
@@ -169,11 +168,10 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            I love challenges and if there&apos;s a hackathon or a jam,
-            I&apos;ll be there!
+            {translations.cards1Slide2Text1}
           </p>
           <p className={styles.textUpscaledY}>
-            Here are some of the projects I&apos;ve worked on:
+            {translations.cards1Slide2Text2}
           </p>
         </article>
       ),
@@ -189,10 +187,10 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            In my last hackathon I worked on a smart watering system.
+            {translations.cards1Slide3Text1}
           </p>
           <p className={styles.textUpscaledY}>
-            We trained a neural network to detect different kinds of plants.
+            {translations.cards1Slide3Text2}
           </p>
         </article>
       ),
@@ -208,13 +206,10 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            Depending on the specific plant needs and current weather and
-            humidity conditions, it was watered with just the right amount of
-            water.
+            {translations.cards1Slide4Text1}
           </p>
           <p className={styles.textUpscaledY}>
-            This was all automatic with an Arduino and a humidity sensor, so
-            healthy plants without having to water them manually!
+            {translations.cards1Slide4Text2}
           </p>
         </article>
       ),
@@ -230,12 +225,10 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            We also made a game version, where when you answeredd correctly
-            questions about the environment, the watering mechanism would
-            trigger.
+            {translations.cards1Slide5Text1}
           </p>
           <p className={styles.textUpscaledY}>
-            Kinda like duolingo, but with plants!
+            {translations.cards1Slide5Text2}
           </p>
         </article>
       ),
@@ -243,7 +236,7 @@ export function ScreenContent({
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/projects/notjustwaterdemo.mp4" autoPlay loop />
           <div className={`${styles.snapchatBar}`}>
-            The watering system in action!
+            {translations.cards1Slide6Text}
           </div>
         </article>
       ),
@@ -259,9 +252,7 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            I also worked on a exopanetary systems visualizer able to
-            procedurally recreate faithful replicas of planets and stars
-            discovered by the NASA
+            {translations.cards1Slide7Text1}
           </p>
         </article>
       ),
@@ -277,9 +268,7 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            We also developed what we called the "music of the stars": a
-            positional sound system where every stellar body emited a
-            disctincive sound depending on its mass and temperature.
+            {translations.cards1Slide8Text1}
           </p>
         </article>
       ),
@@ -295,8 +284,7 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            We made it with Godot, and the coolest part of the project was
-            implementing VR!
+            {translations.cards1Slide9Text1}
           </p>
         </article>
       ),
@@ -304,7 +292,7 @@ export function ScreenContent({
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/projects/spacedemo.mp4" autoPlay loop />
           <div className={`${styles.snapchatBar}`}>
-            It&apos;s not the same without music!
+            {translations.cards1Slide10Text}
           </div>
         </article>
       ),
@@ -320,12 +308,10 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            One of my first "big" projects was saight: an app to help people
-            with visual impediments to interact with their surroundings
+            {translations.cards1Slide11Text1}
           </p>
           <p className={styles.textUpscaledY}>
-            I used a computer vision model to detect objects in real time and
-            inform the user throgh TTS
+            {translations.cards1Slide11Text2}
           </p>
         </article>
       ),
@@ -341,9 +327,7 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            I also implemented voice control and other cool features like face
-            detection and connection to an LLM providing the objects detected in
-            the environment as context.
+            {translations.cards1Slide12Text}
           </p>
         </article>
       ),
@@ -361,11 +345,10 @@ export function ScreenContent({
           }}
         >
           <p className={styles.textUpscaledY}>
-            Besides programming, I also like to design, animate or just create
-            stuff.
+            {translations.cards2Slide0Text1}
           </p>
           <p className={styles.textUpscaledY}>
-            I play bass in a band and design our posters and covers.
+            {translations.cards2Slide0Text2}
           </p>
         </article>
       ),
@@ -373,7 +356,7 @@ export function ScreenContent({
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_lleida.png" alt="" />
           <div className={`${styles.snapchatBar}`}>
-            some posters for concerts!
+            {translations.cards2Slide1Text1}
           </div>
         </article>
       ),
@@ -381,27 +364,31 @@ export function ScreenContent({
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_lleida2.png" alt="" />
           <div className={`${styles.snapchatBar}`}>
-            some posters for concerts!
+            {translations.cards2Slide2Text1}
           </div>
         </article>
       ),
       3: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_gira.png" alt="" />
-          <div className={`${styles.snapchatBar}`}>our first tour poster!</div>
+          <div className={`${styles.snapchatBar}`}>
+            {translations.cards2Slide3Text1}
+          </div>
         </article>
       ),
       4: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/carretera_raw.png" alt="" />
-          <div className={`${styles.snapchatBar}`}>a single cover</div>
+          <div className={`${styles.snapchatBar}`}>
+            {translations.cards2Slide4Text1}
+          </div>
         </article>
       ),
       5: (
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/design/canvas_carretera.mp4" autoPlay loop />
           <div className={`${styles.snapchatBar}`}>
-            and it&apos;s visualizer with synced movement
+            {translations.cards2Slide5Text1}
           </div>
         </article>
       ),
@@ -410,7 +397,9 @@ export function ScreenContent({
       0: (
         <article className={styles.imageSlide}>
           <img src="/images/camera_roll/71.jpg" alt="" />
-          <div className={`${styles.snapchatBar}`}>Madrid!</div>
+          <div className={`${styles.snapchatBar}`}>
+            {translations.cards3Slide0Text1}
+          </div>
         </article>
       ),
     },
