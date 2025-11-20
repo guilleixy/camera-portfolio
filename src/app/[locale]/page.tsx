@@ -120,9 +120,9 @@ export default function Home() {
           </div>
           <Scene ref={sceneRef} />
           <div className={styles.links}>
+            <LocaleSwitcher />
             <a href="">cv</a>
             <a href="">linkedin</a>
-            <LocaleSwitcher />
             {/* <a href="">blog</a> */}
           </div>
         </>

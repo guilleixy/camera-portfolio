@@ -2,8 +2,10 @@
 
 import { useParams } from "next/navigation";
 import { Locale } from "next-intl";
-import { ChangeEvent, ReactNode, useTransition } from "react";
+import { ReactNode, useTransition, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import styles from "./LocaleSwitcherSelect.module.css";
+import { useState } from "react";
 
 type Props = {
   children: ReactNode;
@@ -20,43 +22,104 @@ export default function LocaleSwitcherSelect({
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  function onSelectChange(event: ChangeEvent<HTMLSelectElement>) {
-    const nextLocale = event.target.value as Locale;
+  // Extract options from children
+  const options: string[] = [];
+  if (Array.isArray(children)) {
+    children.forEach((child: any) => {
+      if (child?.props?.value) {
+        options.push(child.props.value);
+      }
+    });
+  }
+
+  function onSelectChange(nextLocale: string) {
     startTransition(() => {
       router.replace(
         // @ts-expect-error -- TypeScript will validate that only known `params`
         // are used in combination with a given `pathname`. Since the two will
         // always match for the current route, we can skip runtime checks.
         { pathname, params },
-        { locale: nextLocale }
+        { locale: nextLocale as Locale }
       );
     });
+    setIsOpen(false);
   }
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [isOpen]);
+
   return (
-    <label
+    <div
+      ref={dropdownRef}
       style={{
-        position: "relative",
-        color: "#9ca3af",
         opacity: isPending ? 0.3 : 1,
         transition: isPending ? "opacity 0.2s" : undefined,
       }}
+      className={styles.root}
     >
-      <select
-        style={{
-          backgroundColor: "white",
-          borderStyle: "solid",
-          borderWidth: "1px",
-          borderRadius: "4px",
-          padding: "5px",
-        }}
-        defaultValue={defaultValue}
+      <button
+        className={styles.select}
         disabled={isPending}
-        onChange={onSelectChange}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={label}
       >
-        {children}
-      </select>
-    </label>
+        <svg
+          viewBox="0 0 73.768 73.768"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#ffffff"
+          width="20"
+          height="20"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              id="Path_10"
+              data-name="Path 10"
+              d="M117.606,385.2a36.884,36.884,0,1,0,36.884,36.884A36.926,36.926,0,0,0,117.606,385.2Zm33.846,35.383H136.366a48.681,48.681,0,0,0-3.047-16.068,36.786,36.786,0,0,0,8.781-5.808A33.752,33.752,0,0,1,151.452,420.586Zm-32.346-31.072a36.534,36.534,0,0,1,6.069,6.387,39.467,39.467,0,0,1,4.176,7.028,33.843,33.843,0,0,1-10.245,2.061Zm3.534-.935a33.762,33.762,0,0,1,17.292,8.051,33.809,33.809,0,0,1-7.772,5.116A41.252,41.252,0,0,0,122.64,388.579ZM110.19,395.9a36.615,36.615,0,0,1,5.916-6.261v15.35a33.789,33.789,0,0,1-10.116-2.013A39.5,39.5,0,0,1,110.19,395.9Zm-7.013,5.906a33.8,33.8,0,0,1-7.9-5.177,33.757,33.757,0,0,1,17.469-8.074A41.244,41.244,0,0,0,103.177,401.807Zm12.929,6.183v12.6H102a45.607,45.607,0,0,1,2.835-14.838A36.83,36.83,0,0,0,116.106,407.99Zm0,15.6v12.386a36.8,36.8,0,0,0-11.018,2.146A42.373,42.373,0,0,1,102,423.587Zm0,15.386v15.252a47.106,47.106,0,0,1-9.792-13.361A33.819,33.819,0,0,1,116.106,438.973Zm-2.86,16.708a33.755,33.755,0,0,1-18.084-8.24,33.786,33.786,0,0,1,8.306-5.426A48.955,48.955,0,0,0,113.246,455.681Zm5.86-1.313v-15.4a33.8,33.8,0,0,1,9.922,1.94A47.081,47.081,0,0,1,119.106,454.368Zm12.762-12.294a33.846,33.846,0,0,1,8.182,5.367,33.759,33.759,0,0,1-17.909,8.217A48.888,48.888,0,0,0,131.868,442.074Zm-12.762-6.1V423.587h14.257a42.352,42.352,0,0,1-3.106,14.582A36.818,36.818,0,0,0,119.106,435.973Zm0-15.386v-12.6a36.806,36.806,0,0,0,11.4-2.291,45.562,45.562,0,0,1,2.854,14.888ZM93.112,398.711a36.8,36.8,0,0,0,8.91,5.871A48.7,48.7,0,0,0,99,420.587H83.76A33.757,33.757,0,0,1,93.112,398.711ZM83.76,423.587H99a45.675,45.675,0,0,0,3.256,15.683A36.807,36.807,0,0,0,93,445.35,33.755,33.755,0,0,1,83.76,423.587Zm58.447,21.764a36.8,36.8,0,0,0-9.122-6.022,45.69,45.69,0,0,0,3.279-15.742h15.088A33.759,33.759,0,0,1,142.207,445.351Z"
+              transform="translate(-80.722 -385.203)"
+              fill="#ffffff"
+            ></path>
+          </g>
+        </svg>
+        {defaultValue.toUpperCase()}
+      </button>
+
+      {isOpen && (
+        <div className={styles.dropdown}>
+          {options.map((option) => (
+            <div
+              key={option}
+              className={styles.option}
+              onClick={() => onSelectChange(option)}
+            >
+              {option.toUpperCase()}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
