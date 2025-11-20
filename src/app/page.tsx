@@ -12,6 +12,8 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function Home() {
   const [isWebStarted, setIsWebStarted] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
   const headerRef = useRef<HTMLDivElement>(null);
   const cameraRollRef = useRef<HTMLDivElement>(null);
   const customCursorRef = useRef<HTMLDivElement>(null);
@@ -21,7 +23,12 @@ export default function Home() {
   const cameraToggle = useCameraStore((s) => s.toggle);
   const sdCardModelToggle = useSDCardModelStore((s) => s.toggle);
   const isMobile = useIsMobile();
+
   useEffect(() => {
+    setMounted(true);
+  }, []);
+  useEffect(() => {
+    if (!mounted || isMobile) return;
     if (headerRef.current) {
       headerRef.current.style.cursor = "none";
     }
@@ -41,7 +48,7 @@ export default function Home() {
       window.removeEventListener("mousemove", move);
       if (headerRef.current) headerRef.current.style.cursor = "";
     };
-  }, []);
+  }, [mounted, isMobile]);
   useEffect(() => {
     if (customCursorRef.current) {
       gsap.fromTo(
@@ -96,6 +103,9 @@ export default function Home() {
 
     timeoutRef.current = window.setTimeout(() => setIsWebStarted(true), 1200);
   };
+  if (isMobile === null) {
+    return null;
+  }
   return (
     <div className={styles.page}>
       {!isMobile ? (
