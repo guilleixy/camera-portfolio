@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "../globals.css";
 import localFont from "next/font/local";
-import { NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { LocaleProvider, useLanguage } from "../../context/LocaleContext";
 const clashDisplayFont = localFont({
   src: [
     {
@@ -30,18 +33,27 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "Guillermo Bernal",
-  description: "Portfolio de Guillermo Bernal",
+  description: "Guillermo Bernal",
 };
 
 export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
   return (
     <html>
       <body className={`${clashDisplayFont.variable} ${robotoMono.variable}`}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

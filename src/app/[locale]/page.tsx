@@ -9,6 +9,7 @@ import { useCameraStore } from "@/store/useCameraStore";
 import { useSDCardModelStore } from "@/store/useSDCardModelStore";
 import MobileContent from "@/components/MobileContent/MobileContent";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import LocaleSwitcher from "@/components/Locale/LocaleSwitcher";
 
 export default function Home() {
   const [isWebStarted, setIsWebStarted] = useState(false);
@@ -121,6 +122,7 @@ export default function Home() {
           <div className={styles.links}>
             <a href="">cv</a>
             <a href="">linkedin</a>
+            <LocaleSwitcher />
             {/* <a href="">blog</a> */}
           </div>
         </>

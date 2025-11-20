@@ -2,13 +2,11 @@ import { useCameraStore } from "@/store/useCameraStore";
 import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
-import * as THREE from "three";
 
 export default function Camera() {
   const animations = useCameraStore((s) => s.animations);
-  const cameraRef = useRef<THREE.PerspectiveCamera>(null);
+  const cameraRef = useRef<any>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const { viewport } = useThree();
 
   const positionBackZoomOut = [0, 30, -200];
   const rotationBackZoomOut = [0, Math.PI, 0];
@@ -16,6 +14,16 @@ export default function Camera() {
   const rotationBackZoomIn = [0, Math.PI, 0];
   const positionFront = [0, 30, 400];
   const rotationFront = [0, 0, 0];
+
+  React.useEffect(() => {
+    useCameraStore.setState({
+      animations: {
+        front: false,
+        backZoomIn: false,
+        backZoomOut: true,
+      },
+    });
+  }, []);
 
   // Mouse movement handler
   React.useEffect(() => {
