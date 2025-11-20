@@ -1,0 +1,20 @@
+.page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-clash-display);
+  font-weight: 700;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.ascii {
+  font-size: 1px;
+}
