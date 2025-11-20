@@ -1,5 +1,5 @@
 "use client";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import CameraRoll from "@/components/CameraRoll/CameraRoll";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";

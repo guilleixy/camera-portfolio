@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 const clashDisplayFont = localFont({
   src: [
     {
-      path: "../../public/fonts/clash_display/ClashDisplay-Regular.woff2",
+      path: "../../../public/fonts/clash_display/ClashDisplay-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/clash_display/ClashDisplay-Medium.woff2",
+      path: "../../../public/fonts/clash_display/ClashDisplay-Medium.woff2",
       weight: "700",
       style: "bold",
     },

@@ -1,15 +1,112 @@
 {
   "Cards": {
+    "Intro": {
+      "Slides": {
+        "0": {
+          "presentation": "¡Hola! Soy Guille :)",
+          "controls": "Para moverte entre diapositivas, usa las flechas a tu derecha."
+        },
+        "1": {
+          "controls": "Puedes seleccionar la tarjeta SD con los botones debajo de la pantalla. Cada SD tiene temas diferentes."
+        }
+      }
+    },
     "0": {
       "Slides": {
         "0": {
-          "presentation": "¡Hola! Soy Guille :), un desarrollador de Zaragoza, España.",
-          "controls": "To move between slides, use the arrow keys to your right."
+          "text": "Soy un desarrollador de 23 años de Zaragoza, España."
         },
         "1": {
-          "controls": "You can select the SD card with the buttons under the screen. Each SD contains different information."
+          "text": "Actualmente estudio ingeniería informática mientras trabajo como programador."
         },
-        "2": {}
+        "2": {
+          "text": "También tengo un Grado Superior en desarrollo multiplataforma y he realizado muchos cursos, principalmente sobre ML y UX."
+        },
+        "3": {
+          "text": "Mi otra pasión es el arte en todas sus formas. Me encanta la música, diseñar cosas y la fotografía (obviamente)."
+        }
+      }
+    },
+    "1": {
+      "Slides": {
+        "0": {
+          "title": "Mi stack web",
+          "text1": "He trabajado con una amplia variedad de tecnologías, tanto de front como de backend.",
+          "text2": "Pero mis favoritas son sin duda Three.js y Next.js.",
+          "githubCTA": "Aquí está mi "
+        },
+        "1": {
+          "text1": "También me interesa mucho el Machine Learning y la programación en general.",
+          "text2": "Tengo experiencia con Python y actualmente estoy aprendiendo Rust."
+        },
+        "2": {
+          "text1": "Me encantan los retos y si hay un hackathon o una jam, ¡ahí estaré!",
+          "text2": "Estos son algunos de los proyectos en los que he trabajado:"
+        },
+        "3": {
+          "text1": "En mi último hackathon trabajé en un sistema de riego inteligente.",
+          "text2": "Entrenamos una red neuronal para detectar distintos tipos de plantas."
+        },
+        "4": {
+          "text1": "Dependiendo de las necesidades específicas de la planta y las condiciones de clima y humedad, se regaba con la cantidad justa de agua.",
+          "text2": "Todo esto era automático con un Arduino y un sensor de humedad, ¡plantas sanas sin regarlas manualmente!"
+        },
+        "5": {
+          "text1": "También hicimos una versión en forma de juego, donde si respondías correctamente preguntas sobre el medio ambiente, se activaba el mecanismo de riego.",
+          "text2": "Como Duolingo, pero con plantas"
+        },
+        "6": {
+          "text": "El sistema de riego en acción"
+        },
+        "7": {
+          "text": "También trabajé en un visualizador de sistemas exoplanetarios capaz de recrear proceduralmente réplicas fieles de planetas y estrellas descubiertos por la NASA."
+        },
+        "8": {
+          "text": "También desarrollamos lo que llamamos la 'música de las estrellas': un sistema de sonido posicional donde cada cuerpo estelar emitía un sonido distintivo según su masa y temperatura."
+        },
+        "9": {
+          "text": "Lo hicimos con Godot, y la parte más chula del proyecto fue implementar VR"
+        },
+        "10": {
+          "text": "¡No es lo mismo sin sonido!"
+        },
+        "11": {
+          "text1": "Uno de mis primeros proyectos 'grandes' fue Saight: una app para ayudar a personas con problemas de visión a interactuar con su entorno.",
+          "text2": "Usé un modelo de visión por computador para detectar objetos en tiempo real e informar al usuario mediante TTS."
+        },
+        "12": {
+          "text": "También implementé control por voz y otras funciones chulas como detección de caras y conexión con un LLM que recibía como contexto los objetos detectados en el entorno."
+        }
+      }
+    },
+    "2": {
+      "Slides": {
+        "0": {
+          "text1": "Además de programar, también me gusta diseñar, animar o simplemente crear cosas.",
+          "text2": "Toco el bajo en una banda y diseño nuestros carteles y portadas."
+        },
+        "1": {
+          "text": "¡Algunos carteles para conciertos!"
+        },
+        "2": {
+          "text": "¡Algunos carteles para conciertos!"
+        },
+        "3": {
+          "text": "¡Nuestro primer cartel de gira!"
+        },
+        "4": {
+          "text": "Una portada de single"
+        },
+        "5": {
+          "text": "Y su visualizer con movimiento sincronizado"
+        }
+      }
+    },
+    "3": {
+      "Slides": {
+        "0": {
+          "text": "¡Madrid!"
+        }
       }
     }
   }

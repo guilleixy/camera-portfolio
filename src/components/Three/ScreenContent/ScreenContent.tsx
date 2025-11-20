@@ -133,7 +133,10 @@ export function ScreenContent({
           </p>
           <p className={styles.textUpscaledY}>
             {translations.cards1Slide0GithubCTA}
-            <a href="">Github</a>!
+            <a href="https://github.com/guilleixy" target="_blank">
+              Github
+            </a>
+            !
           </p>
         </article>
       ),
