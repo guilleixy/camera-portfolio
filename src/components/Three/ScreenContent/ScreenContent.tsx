@@ -406,6 +406,14 @@ export function ScreenContent({
         </article>
       ),
     },
+    4: {
+      0: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/71.jpg" alt="" />
+          <div className={`${styles.snapchatBar}`}>Madrid!</div>
+        </article>
+      ),
+    },
   };
   const content = SCREEN_CONTENT[card]?.[slide];
 

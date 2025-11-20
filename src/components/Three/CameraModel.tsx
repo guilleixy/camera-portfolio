@@ -129,6 +129,7 @@ const CameraModel: React.FC<{
 
   const handleButtonUpClick = (event: any) => {
     event.stopPropagation();
+    slidesLengths[card] != slide + 1 && setSlide((prev) => prev + 1);
   };
 
   const handleLeftButtonClick = (event: any) => {
@@ -143,6 +144,7 @@ const CameraModel: React.FC<{
 
   const handleButtonDownClick = (event: any) => {
     event.stopPropagation();
+    slide !== 0 && setSlide((prev) => prev - 1);
   };
 
   const animations = useCameraModelStore((s) => s.animations);

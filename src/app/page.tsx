@@ -121,7 +121,7 @@ export default function Home() {
           <div className={styles.links}>
             <a href="">cv</a>
             <a href="">linkedin</a>
-            <a href="">blog</a>
+            {/* <a href="">blog</a> */}
           </div>
         </>
       ) : (
