@@ -34,6 +34,9 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Guillermo Bernal",
   description: "Guillermo Bernal",
+  icons: {
+    icon: "../favicon.svg",
+  },
 };
 
 export default async function RootLayout({
