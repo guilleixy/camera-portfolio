@@ -11,6 +11,7 @@ import MobileContent from "@/components/MobileContent/MobileContent";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import LocaleSwitcher from "@/components/Locale/LocaleSwitcher";
 import { useTranslations } from "next-intl";
+import { useCardStore } from "@/store/useCardStore";
 
 export default function Home() {
   const [isWebStarted, setIsWebStarted] = useState(false);
@@ -27,7 +28,7 @@ export default function Home() {
   const isMobile = useIsMobile();
 
   const t = useTranslations("General");
-
+  const { setCard } = useCardStore();
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -95,6 +96,7 @@ export default function Home() {
     }, 1400);
     setTimeout(() => {
       sdCardModelToggle("intro");
+      setCard(0);
     }, 2000);
 
     timeoutRef.current = window.setTimeout(() => setIsWebStarted(true), 1200);

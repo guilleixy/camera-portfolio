@@ -6,6 +6,6 @@ type CardModelStore = {
 };
 
 export const useCardStore = create<CardModelStore>((set) => ({
-  card: 0,
+  card: 5,
   setCard: (card) => set({ card }),
 }));
