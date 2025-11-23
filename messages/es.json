@@ -1,4 +1,7 @@
 {
+  "General": {
+    "startCTA": "¡click para empezar!"
+  },
   "Cards": {
     "Intro": {
       "Slides": {

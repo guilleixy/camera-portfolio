@@ -34,9 +34,6 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Guillermo Bernal",
   description: "Guillermo Bernal",
-  icons: {
-    icon: "../favicon.svg",
-  },
 };
 
 export default async function RootLayout({
@@ -53,6 +50,9 @@ export default async function RootLayout({
   }
   return (
     <html>
+      <head>
+        <link rel="icon" href="../favicon.svg" sizes="any" />
+      </head>
       <body className={`${clashDisplayFont.variable} ${robotoMono.variable}`}>
         <NextIntlClientProvider>
           <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>

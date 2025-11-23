@@ -10,6 +10,7 @@ import { useSDCardModelStore } from "@/store/useSDCardModelStore";
 import MobileContent from "@/components/MobileContent/MobileContent";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import LocaleSwitcher from "@/components/Locale/LocaleSwitcher";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
   const [isWebStarted, setIsWebStarted] = useState(false);
@@ -24,6 +25,8 @@ export default function Home() {
   const cameraToggle = useCameraStore((s) => s.toggle);
   const sdCardModelToggle = useSDCardModelStore((s) => s.toggle);
   const isMobile = useIsMobile();
+
+  const t = useTranslations("General");
 
   useEffect(() => {
     setMounted(true);
@@ -116,7 +119,7 @@ export default function Home() {
           </div>
           {!isWebStarted && <CameraRoll containerRef={cameraRollRef} />}
           <div ref={customCursorRef} className={styles.cursor}>
-            click to start!
+            {t("startCTA")}
           </div>
           <Scene ref={sceneRef} />
           <div className={styles.links}>
