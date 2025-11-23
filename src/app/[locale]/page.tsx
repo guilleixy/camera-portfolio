@@ -85,15 +85,7 @@ export default function Home() {
     if (customCursorRef.current) {
       gsap.to(customCursorRef.current, { opacity: 0, duration: 0.4 });
     }
-    // setTimeout(() => {
-    //   cameraModelToggle("introPosition");
-    // }, 2000);
-    // setTimeout(() => {
-    //   cameraModelToggle("openCase");
-    // }, 2500);
-    // setTimeout(() => {
-    //   cameraModelToggle("openCase");
-    // }, 300);
+
     if (sceneRef.current) {
       sceneRef.current.style.top = "0";
     }

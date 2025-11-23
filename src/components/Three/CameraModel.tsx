@@ -7,6 +7,7 @@ import { useFrame } from "@react-three/fiber";
 import { ScreenContent } from "./ScreenContent/ScreenContent";
 import { useSDCardModelStore } from "@/store/useSDCardModelStore";
 import { useCameraStore } from "@/store/useCameraStore";
+import { useCardStore } from "@/store/useCardStore";
 export const slidesLengths: Array<number> = [2, 4, 13, 6, 1];
 const CameraModel: React.FC<{
   translations: any;
@@ -32,7 +33,7 @@ const CameraModel: React.FC<{
   const buttonLeftRef = useRef<Mesh>(null);
   const screenRef = useRef<Mesh>(null);
 
-  const [card, setCard] = useState(0);
+  const { card, setCard } = useCardStore();
   const [slide, setSlide] = useState(0);
 
   const handleButton1Click = (event: any) => {
