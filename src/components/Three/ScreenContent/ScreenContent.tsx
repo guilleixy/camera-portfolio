@@ -2,6 +2,9 @@ import React, { useState, useEffect, JSX } from "react";
 import { useCameraModelStore } from "@/store/useCameraModelStore";
 import styles from "./ScreenContent.module.css";
 import { slidesLengths } from "../CameraModel";
+import LastPlayedSong from "@/components/Stats/SongStats/LastPlayedSong";
+import MostPlayedSong from "@/components/Stats/SongStats/MostPlayedSong";
+import TopArtists from "@/components/Stats/SongStats/TopArtists";
 
 export function ScreenContent({
   card,
@@ -107,6 +110,29 @@ export function ScreenContent({
           <p className={styles.textUpscaledY}>
             {translations.cards0Slide3Text}
           </p>
+        </article>
+      ),
+      4: (
+        <article className={`${styles.basicSlide}`}>
+          <p className={styles.textUpscaledY}>
+            {translations.cards0Slide4Text}
+          </p>
+          <p className={styles.textUpscaledY}>
+            {translations.cards0Slide4lastSongText}
+          </p>
+          <LastPlayedSong />
+          <p className={styles.textUpscaledY}>
+            {translations.cards0Slide4obssessionText}
+          </p>
+          <MostPlayedSong />
+        </article>
+      ),
+      5: (
+        <article className={`${styles.basicSlide}`}>
+          <p className={styles.textUpscaledY}>
+            {translations.cards0Slide5Text}
+          </p>
+          <TopArtists />
         </article>
       ),
     },

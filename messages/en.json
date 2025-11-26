@@ -34,6 +34,14 @@
         },
         "3": {
           "text": "My other passion is art in any form. I love music, designing stuff and photography (obviously)."
+        },
+        "4": {
+          "text": "Just so you know me a bit better, here's some of my music taste!",
+          "lastPlayed": "My last played song:",
+          "obsession": "My current obsession:"
+        },
+        "5": {
+          "text": "And my top artists at the moment:"
         }
       }
     },

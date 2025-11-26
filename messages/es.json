@@ -34,6 +34,14 @@
         },
         "3": {
           "text": "Mi otra pasión es el arte en todas sus formas. Me encanta la música, diseñar cosas y la fotografía (obviamente)."
+        },
+        "4": {
+          "text": "Para que me conozcas un poco mejor, aquí un poco de mis gustos musicales:",
+          "lastPlayed": "La última canción que he escuchado:",
+          "obsession": "Mi última obsesión:"
+        },
+        "5": {
+          "text": "Y mis artistas favoritos ahora mismo:"
         }
       }
     },
