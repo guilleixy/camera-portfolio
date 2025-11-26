@@ -6,15 +6,42 @@
   font-family: var(--font-clash-display);
   font-weight: 700;
   flex-direction: column;
-  gap: 5px;
+  gap: 1rem;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 400;
 }
 
 .links {
+  font-weight: 400;
   display: flex;
   list-style: none;
   gap: 20px;
 }
 
+.links a {
+  background-color: var(--accent);
+  padding: 0 0.5rem;
+}
+
 .ascii {
   font-size: 1px;
+}
+
+.lang {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+.lang button {
+  color: black;
+}
+
+.lang svg path {
+  fill: black !important;
 }

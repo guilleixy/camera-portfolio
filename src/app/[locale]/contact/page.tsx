@@ -9,11 +9,11 @@ export default function ContactPage() {
           <a href="">guillermobernallou@gmail.com</a>
         </li>
         <li>
-          <div>linkedin</div>
+          <div>linkedin:</div>
           <a href="">linkedin.com/in/guillermo-bernal-lou/</a>
         </li>
         <li>
-          <div>github</div>
+          <div>github:</div>
           <a href="">github.com/guilleixy</a>
         </li>
       </ul>

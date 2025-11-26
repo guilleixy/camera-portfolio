@@ -1,57 +1,13 @@
+import LocaleSwitcher from "../Locale/LocaleSwitcher";
 import styles from "./MobileContent.module.css";
 import { useState, useEffect } from "react";
-
-const frames = `                            ██████                                                              
-                          ████████████▒▒                            ████▒▒                      
-                        ████        ██████                    ██████████████                    
-                      ▒▒██              ████              ████████        ████                  
-                      ████                ██          ▒▒██████              ████                
-                      ████                          ██████                  ████                
-                      ████                        ██████                    ████                
-                      ████                      ████                        ████                
-                      ████                    ████░░                        ████                
-                      ████                  ████                            ████                
-                      ████                ████                              ████                
-                      ████                ████                                                  
-                        ██            ████████████                                              
-                      ████████████████████████████████████████████                              
-              ████████████████      ████                  ██████████████████                    
-          ████████      ▒▒██        ████                              ████████████              
-      ██████              ██      ████                                        ████████          
-  ██████                  ████  ████                                                ██████      
-  ████                    ████  ████                            ██                      ████▒▒  
-████                        ██████            ██████            ████                      ████  
-████                        ████            ██████████            ██                        ████
-████                        ████            ██████████            ████                        ██
-  ████                    ▒▒██████          ██████████            ████                        ██
-  ██████                  ████████            ██████                ████                      ██
-      ██████              ██    ████                                ████                    ████
-          ████          ████      ██                                  ██                ██████  
-                      ▒▒██        ████                                ████          ▒▒██████    
-                      ████        ████                                ████          ██████      
-                      ████          ████                              ████                      
-                    ▓▓██▓▓          ████                                ██                      
-                    ████              ████                              ████                    
-                    ████                ████                            ████                    
-                  ▓▓██▓▓                ████                            ████                    
-                  ████                    ████                          ████                    
-                  ████                      ████                          ██                    
-                  ████                      ██████                        ██                    
-                  ████                        ████                        ██                    
-                  ████                          ████                    ████                    
-                  ██████              ████        ████▓▓                ████                    
-                    ████          ██████            ██████              ████                    
-                    ▒▒████████████████                ▓▓██████        ████                      
-                        ██████████                        ████████░░██████                      
-                                                            ▓▓██████████                        
-`;
 
 export default function MobileContent() {
   const [currentDate, setCurrentDate] = useState(new Date());
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentDate(new Date());
-    }, 1000); // Update every second
+    }, 1000);
 
     return () => clearInterval(timer);
   }, []);
@@ -61,6 +17,7 @@ export default function MobileContent() {
       year: "numeric",
       month: "long",
       day: "numeric",
+      timeZone: "Europe/Madrid",
     });
   };
 
@@ -69,22 +26,32 @@ export default function MobileContent() {
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit",
+      timeZone: "Europe/Madrid",
     });
   };
   return (
     <div className={styles.page}>
       {/* <pre className={styles.ascii}>{frames}</pre> */}
       <h1>guillermo bernal</h1>
-      <h3>{formatDate()}</h3>
-      <h4>{formatTime()}</h4>
+      <div className={styles.time}>
+        <div>time in zaragoza:</div>
+        <div>{formatDate()}</div>
+        <div>{formatTime()}</div>
+      </div>
       <ul className={styles.links}>
         <li>
-          <a href="">linkedin</a>
+          <a href="/about">about</a>
         </li>
         <li>
-          <a href="">cv</a>
+          <a href="/contact">contact</a>
+        </li>
+        <li>
+          <a href="/contact">resume</a>
         </li>
       </ul>
+      <div className={styles.lang}>
+        <LocaleSwitcher />
+      </div>
       {/* <h4>i make it happen</h4> */}
     </div>
   );

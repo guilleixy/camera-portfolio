@@ -118,8 +118,8 @@ export default function Home() {
           <Scene ref={sceneRef} />
           <div className={styles.links}>
             <LocaleSwitcher />
-            <a href="">cv</a>
-            <a href="">linkedin</a>
+            <a href="">resume</a>
+            <a href="/contact">contact</a>
             {/* <a href="">blog</a> */}
           </div>
         </>

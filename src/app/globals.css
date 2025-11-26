@@ -2,6 +2,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --accent: #ffcb61;
+  --accent-reverse: #00349e;
 }
 
 /* @media (prefers-color-scheme: dark) {
