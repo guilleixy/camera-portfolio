@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import LocaleSwitcher from "../Locale/LocaleSwitcher";
 import styles from "./MobileContent.module.css";
 import { useState, useEffect } from "react";
@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 export default function MobileContent() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const t = useTranslations("General");
+  const locale = useLocale();
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentDate(new Date());
@@ -14,13 +15,14 @@ export default function MobileContent() {
     return () => clearInterval(timer);
   }, []);
   const formatDate = () => {
-    return currentDate.toLocaleDateString("en-US", {
+    const date = currentDate.toLocaleDateString(locale, {
       weekday: "long",
       year: "numeric",
       month: "long",
       day: "numeric",
       timeZone: "Europe/Madrid",
     });
+    return date.charAt(0).toUpperCase() + date.slice(1);
   };
 
   const formatTime = () => {
