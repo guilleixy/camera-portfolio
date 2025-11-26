@@ -1,6 +1,9 @@
+import { useTranslations } from "next-intl";
 import styles from "./about.module.css";
 
 export default function AboutPage() {
+  const tGeneral = useTranslations("General");
+
   return (
     <section className={styles.root}>
       <article>
@@ -8,7 +11,7 @@ export default function AboutPage() {
         <p>asdhakjsdhaksdhaksdagsdadsgakjsdgaksdjg</p>
         <p>asdhakjsdhaksdhaksdagsdadsgakjsdgaksdjg</p>
       </article>
-      <a href="/">go back</a>
+      <a href="/">{tGeneral("backButton")}</a>
     </section>
   );
 }

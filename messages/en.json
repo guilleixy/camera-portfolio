@@ -1,7 +1,14 @@
 {
   "General": {
-    "startCTA": "click to start!"
+    "startCTA": "click to start!",
+    "backButton": "go back",
+    "timeIn": "time in Zaragoza:",
+    "about": "about",
+    "contact": "contact",
+    "resume": "resume"
   },
+  "Contact": {},
+  "About": {},
   "Cards": {
     "Intro": {
       "Slides": {

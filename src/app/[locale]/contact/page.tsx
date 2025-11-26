@@ -1,6 +1,8 @@
+import { useTranslations } from "next-intl";
 import styles from "./contact.module.css";
 
 export default function ContactPage() {
+  const t = useTranslations("General");
   return (
     <section className={styles.root}>
       <ul>
@@ -17,7 +19,7 @@ export default function ContactPage() {
           <a href="">github.com/guilleixy</a>
         </li>
       </ul>
-      <a href="/">go back</a>
+      <a href="/">{t("backButton")}</a>
     </section>
   );
 }
