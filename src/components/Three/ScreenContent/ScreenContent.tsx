@@ -165,13 +165,13 @@ export function ScreenContent({
           <p className={styles.textUpscaledY}>
             {translations.cards1Slide0Text2}
           </p>
-          <p className={styles.textUpscaledY}>
+          {/* <p className={styles.textUpscaledY}>
             {translations.cards1Slide0GithubCTA}
             <a href="https://github.com/guilleixy" target="_blank">
               Github
             </a>
             !
-          </p>
+          </p> */}
         </article>
       ),
       1: (
