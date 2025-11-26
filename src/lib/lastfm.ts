@@ -15,7 +15,7 @@ export const getMostPlayedSong = async () => {
       process.env.LASTFM_USER_NAME +
       "&api_key=" +
       process.env.LASTFM_API_KEY +
-      "&format=json&limit=1&period=7day"
+      "&format=json&limit=1&period=1month"
   );
   return response.json();
 };

@@ -5,6 +5,7 @@ import { slidesLengths } from "../CameraModel";
 import LastPlayedSong from "@/components/Stats/SongStats/LastPlayedSong";
 import MostPlayedSong from "@/components/Stats/SongStats/MostPlayedSong";
 import TopArtists from "@/components/Stats/SongStats/TopArtists";
+import LastPlayedGame from "@/components/Stats/GameStats/LastPlayedGame";
 
 export function ScreenContent({
   card,
@@ -133,6 +134,14 @@ export function ScreenContent({
             {translations.cards0Slide5Text}
           </p>
           <TopArtists />
+        </article>
+      ),
+      6: (
+        <article className={`${styles.basicSlide}`}>
+          <p className={styles.textUpscaledY}>
+            {translations.cards0Slide6Text}
+          </p>
+          <LastPlayedGame />
         </article>
       ),
     },
