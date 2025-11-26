@@ -22,7 +22,7 @@ export default function LastPlayedGame() {
     fetchLastPlayedGame();
   }, []);
   return loading ? (
-    <Skeleton baseColor="#202020" highlightColor="#444" height={20} />
+    <Skeleton baseColor="#20202071" highlightColor="#44444462" height={20} />
   ) : (
     <>
       {lastPlayedGame?.map((game: any, index: number) => (

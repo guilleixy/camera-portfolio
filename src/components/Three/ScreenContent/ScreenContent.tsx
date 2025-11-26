@@ -73,7 +73,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/55.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/31.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -101,7 +101,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/58.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/91.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -113,7 +113,16 @@ export function ScreenContent({
         </article>
       ),
       4: (
-        <article className={`${styles.basicSlide}`}>
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/3.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <p className={styles.textUpscaledY}>
             {translations.cards0Slide4Text}
           </p>
@@ -128,7 +137,16 @@ export function ScreenContent({
         </article>
       ),
       5: (
-        <article className={`${styles.basicSlide}`}>
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/66.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <p className={styles.textUpscaledY}>
             {translations.cards0Slide5Text}
           </p>
@@ -136,7 +154,16 @@ export function ScreenContent({
         </article>
       ),
       6: (
-        <article className={`${styles.basicSlide}`}>
+        <article
+          className={`${styles.basicSlide}`}
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/camera_roll/25.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <p className={styles.textUpscaledY}>
             {translations.cards0Slide6Text}
           </p>
@@ -150,7 +177,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/27.jpg')",
+              "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/camera_roll/27.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -179,7 +206,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('/images/camera_roll/71.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/71.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -198,7 +225,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/45.jpg')",
+              "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/images/camera_roll/108.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -328,9 +355,9 @@ export function ScreenContent({
       10: (
         <article className={`${styles.squareImageSlide}`}>
           <video src="/images/projects/spacedemo.mp4" autoPlay loop />
-          <div className={`${styles.snapchatBar}`}>
+          {/* <div className={`${styles.snapchatBar}`}>
             {translations.cards1Slide10Text}
-          </div>
+          </div> */}
         </article>
       ),
       11: (
@@ -400,17 +427,17 @@ export function ScreenContent({
       2: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_lleida2.png" alt="" />
-          <div className={`${styles.snapchatBar}`}>
+          {/* <div className={`${styles.snapchatBar}`}>
             {translations.cards2Slide2Text1}
-          </div>
+          </div> */}
         </article>
       ),
       3: (
         <article className={`${styles.squareImageSlide}`}>
           <img src="/images/design/cartel_gira.png" alt="" />
-          <div className={`${styles.snapchatBar}`}>
+          {/* <div className={`${styles.snapchatBar}`}>
             {translations.cards2Slide3Text1}
-          </div>
+          </div> */}
         </article>
       ),
       4: (

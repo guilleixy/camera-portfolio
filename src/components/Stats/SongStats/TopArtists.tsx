@@ -23,7 +23,7 @@ export default function TopArtists() {
     fetchTopArtists();
   }, []);
   return loading ? (
-    <Skeleton baseColor="#202020" highlightColor="#444" height={33} />
+    <Skeleton baseColor="#20202071" highlightColor="#44444462" height={33} />
   ) : (
     <div>
       {topArtists?.map((artist: any, index: number) => (

@@ -22,7 +22,7 @@ export default function MostPlayedSong() {
     fetchMostPlayedSong();
   }, []);
   return loading ? (
-    <Skeleton baseColor="#202020" highlightColor="#444" height={7} />
+    <Skeleton baseColor="#20202071" highlightColor="#44444462" height={7} />
   ) : (
     <div>
       {mostPlayedSong?.name} - {mostPlayedSong?.artist?.name}
