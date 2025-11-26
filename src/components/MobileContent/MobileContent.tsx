@@ -48,7 +48,13 @@ export default function MobileContent() {
           <a href="/contact">{t("contact")}</a>
         </li>
         <li>
-          <a href="/contact">{t("resume")}</a>
+          <a
+            href="/GuillermoBernalResume27112025.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("resume")}
+          </a>
         </li>
       </ul>
       <div className={styles.lang}>

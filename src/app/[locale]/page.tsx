@@ -96,8 +96,10 @@ export default function Home() {
     }, 1400);
     setTimeout(() => {
       sdCardModelToggle("intro");
-      setCard(0);
     }, 2000);
+    setTimeout(() => {
+      setCard(0);
+    }, 2300);
 
     timeoutRef.current = window.setTimeout(() => setIsWebStarted(true), 1200);
   };
@@ -118,7 +120,13 @@ export default function Home() {
           <Scene ref={sceneRef} />
           <div className={styles.links}>
             <LocaleSwitcher />
-            <a href="">{t("resume")}</a>
+            <a
+              href="/GuillermoBernalResume27112025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("resume")}
+            </a>
             <a href="/contact">{t("contact")}</a>
             {/* <a href="">blog</a> */}
           </div>

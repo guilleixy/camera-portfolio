@@ -8,15 +8,24 @@ export default function ContactPage() {
       <ul>
         <li>
           <div>e-mail:</div>
-          <a href="">guillermobernallou@gmail.com</a>
+          <a href="mailto:guillermobernallou@gmail.com">
+            guillermobernallou@gmail.com
+          </a>
         </li>
         <li>
           <div>linkedin:</div>
-          <a href="">linkedin.com/in/guillermo-bernal-lou/</a>
+          <a
+            href="https://linkedin.com/in/guillermo-bernal-lou/"
+            target="_blank"
+          >
+            linkedin.com/in/guillermo-bernal-lou/
+          </a>
         </li>
         <li>
           <div>github:</div>
-          <a href="">github.com/guilleixy</a>
+          <a href="https://github.com/guilleixy" target="_blank">
+            github.com/guilleixy
+          </a>
         </li>
       </ul>
       <a href="/">{t("backButton")}</a>
