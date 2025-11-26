@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function LastPlayedSong() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -20,7 +22,7 @@ export default function LastPlayedSong() {
     fetchLastPlayedSong();
   }, []);
   return loading ? (
-    <div>Loading</div>
+    <Skeleton baseColor="#202020" highlightColor="#444" height={7} />
   ) : (
     <div>
       {lastPlayedSong?.name} - {lastPlayedSong?.artist?.["#text"]}

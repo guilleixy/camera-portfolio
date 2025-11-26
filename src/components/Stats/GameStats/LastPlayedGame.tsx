@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function LastPlayedGame() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -20,7 +22,7 @@ export default function LastPlayedGame() {
     fetchLastPlayedGame();
   }, []);
   return loading ? (
-    <div>Loading</div>
+    <Skeleton baseColor="#202020" highlightColor="#444" height={20} />
   ) : (
     <>
       {lastPlayedGame?.map((game: any, index: number) => (
