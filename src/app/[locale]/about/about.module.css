@@ -16,3 +16,17 @@
   flex-direction: column;
   gap: 0.4rem;
 }
+
+.lang {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+.lang button {
+  color: black;
+}
+
+.lang svg path {
+  fill: black !important;
+}

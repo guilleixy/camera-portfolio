@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import styles from "./about.module.css";
+import LocaleSwitcher from "@/components/Locale/LocaleSwitcher";
 
 export default function AboutPage() {
   const tGeneral = useTranslations("General");
@@ -15,6 +16,9 @@ export default function AboutPage() {
           ))}
       </article>
       <a href="/">{tGeneral("backButton")}</a>
+      <div className={styles.lang}>
+        <LocaleSwitcher />
+      </div>
     </section>
   );
 }
