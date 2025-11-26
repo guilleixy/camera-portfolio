@@ -1,5 +1,4 @@
-import React, { useState, useEffect, JSX } from "react";
-import { useCameraModelStore } from "@/store/useCameraModelStore";
+import React, { JSX } from "react";
 import styles from "./ScreenContent.module.css";
 import { slidesLengths } from "../CameraModel";
 import LastPlayedSong from "@/components/Stats/SongStats/LastPlayedSong";
