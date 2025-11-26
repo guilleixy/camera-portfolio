@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import NowPlayingIcon from "./NowPlayingIcon";
 
 export default function LastPlayedSong() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -24,8 +25,19 @@ export default function LastPlayedSong() {
   return loading ? (
     <Skeleton baseColor="#202020" highlightColor="#444" height={7} />
   ) : (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
+    >
       {lastPlayedSong?.name} - {lastPlayedSong?.artist?.["#text"]}
+      {lastPlayedSong?.["@attr"]?.nowplaying === "true" ? (
+        <NowPlayingIcon />
+      ) : (
+        "upsi"
+      )}
     </div>
   );
 }
