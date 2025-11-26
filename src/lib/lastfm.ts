@@ -1,6 +1,8 @@
 export const getLastPlayedSong = async () => {
   const response = await fetch(
-    "http://ws.audioscrobbler.com/2.0?method=user.getrecenttracks&user=mofetagalactica&api_key=" +
+    "http://ws.audioscrobbler.com/2.0?method=user.getrecenttracks&user=" +
+      process.env.LASTFM_USER_NAME +
+      "&api_key=" +
       process.env.LASTFM_API_KEY +
       "&format=json&limit=1"
   );
@@ -9,7 +11,9 @@ export const getLastPlayedSong = async () => {
 
 export const getTopArtists = async () => {
   const response = await fetch(
-    "http://ws.audioscrobbler.com/2.0?method=user.gettopartists&user=mofetagalactica&api_key=" +
+    "http://ws.audioscrobbler.com/2.0?method=user.gettopartists&user=" +
+      process.env.LASTFM_USER_NAME +
+      "&api_key=" +
       process.env.LASTFM_API_KEY +
       "&format=json&limit=4&period=1month"
   );
