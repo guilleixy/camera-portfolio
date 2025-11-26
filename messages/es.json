@@ -1,7 +1,14 @@
 {
   "General": {
-    "startCTA": "¡click para empezar!"
+    "startCTA": "¡click para empezar!",
+    "backButton": "volver",
+    "timeIn": "hora en zaragoza:",
+    "about": "sobre mi",
+    "contact": "contacto",
+    "resume": "currículum"
   },
+  "Contact": {},
+  "About": {},
   "Cards": {
     "Intro": {
       "Slides": {
