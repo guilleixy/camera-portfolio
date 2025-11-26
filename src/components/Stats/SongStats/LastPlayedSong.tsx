@@ -36,7 +36,7 @@ export default function LastPlayedSong() {
       {lastPlayedSong?.["@attr"]?.nowplaying === "true" ? (
         <NowPlayingIcon />
       ) : (
-        "upsi"
+        ""
       )}
     </div>
   );

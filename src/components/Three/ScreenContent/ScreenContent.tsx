@@ -22,7 +22,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url('/images/camera_roll/93.jpg')",
+              "linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url('/images/camera_roll/90.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -41,7 +41,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/9.jpg')",
+              "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/images/camera_roll/86.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -59,7 +59,7 @@ export function ScreenContent({
           className={`${styles.basicSlide}`}
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/images/camera_roll/70.jpg')",
+              "linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/images/camera_roll/67.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
