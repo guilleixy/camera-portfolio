@@ -460,10 +460,61 @@ export function ScreenContent({
     4: {
       0: (
         <article className={styles.imageSlide}>
-          <img src="/images/camera_roll/71.jpg" alt="" />
+          <img src="/images/camera_roll/110.jpg" alt="" />
           <div className={`${styles.snapchatBar}`}>
-            {translations.cards3Slide0Text1}
+            {translations.cards3Madrid2024}
           </div>
+        </article>
+      ),
+      1: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/108.jpg" alt="" />
+        </article>
+      ),
+      2: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/109.jpg" alt="" />
+        </article>
+      ),
+      3: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/40.jpg" alt="" />
+          <div className={`${styles.snapchatBar}`}>
+            {translations.cards3ACoruña2025}
+          </div>
+        </article>
+      ),
+      4: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/46.jpg" alt="" />
+        </article>
+      ),
+      5: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/43.jpg" alt="" />
+        </article>
+      ),
+      6: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/94.jpg" alt="" />
+          <div className={`${styles.snapchatBar}`}>
+            {translations.cards3Barcelona2025}
+          </div>
+        </article>
+      ),
+      7: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/104.jpg" alt="" />
+        </article>
+      ),
+      8: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/105.jpg" alt="" />
+        </article>
+      ),
+      9: (
+        <article className={styles.imageSlide}>
+          <img src="/images/camera_roll/99.jpg" alt="" />
         </article>
       ),
     },

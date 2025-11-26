@@ -125,8 +125,14 @@
     },
     "3": {
       "Slides": {
-        "0": {
-          "text": "Madrid!"
+        "madrid2024": {
+          "text": "Madrid, July 2024"
+        },
+        "aCoruña2025": {
+          "text": "A Coruña, February 2025"
+        },
+        "barcelona2025": {
+          "text": "Barcelona, November 2025"
         }
       }
     }
