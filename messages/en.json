@@ -8,7 +8,9 @@
     "resume": "resume"
   },
   "Contact": {},
-  "About": {},
+  "About": {
+    "textHTML": "I'm a developer with a strong focus on design and clean code.\n\nMy favourite technologies are NextJS and ThreeJS, but I've also worked with a broad range of languages and frameworks including React, NodeJS and PHP.\n\nI have real experience both in front and backend development.\n\nOutside coding, I like music and photography."
+  },
   "Cards": {
     "Intro": {
       "Slides": {

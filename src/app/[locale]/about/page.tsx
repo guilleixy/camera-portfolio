@@ -3,13 +3,16 @@ import styles from "./about.module.css";
 
 export default function AboutPage() {
   const tGeneral = useTranslations("General");
+  const tAbout = useTranslations("About");
 
   return (
     <section className={styles.root}>
       <article>
-        <p>asdhakjsdhaksdhaksdagsdadsgakjsdgaksdjg</p>
-        <p>asdhakjsdhaksdhaksdagsdadsgakjsdgaksdjg</p>
-        <p>asdhakjsdhaksdhaksdagsdadsgakjsdgaksdjg</p>
+        {tAbout("textHTML")
+          .split("\n\n")
+          .map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
       </article>
       <a href="/">{tGeneral("backButton")}</a>
     </section>

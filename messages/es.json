@@ -8,7 +8,9 @@
     "resume": "currículum"
   },
   "Contact": {},
-  "About": {},
+  "About": {
+    "textHTML": "Soy un desarrollador enfocado en el diseño y el código limpio.\n\nMis tecnologías favoritas son NextJS y ThreeJS, pero también he trabajado con una amplia gama de lenguajes y frameworks incluyendo React, NodeJS y PHP.\n\nTengo experiencia real tanto en desarrollo frontend como backend.\n\nAdemás de programar, me gusta la música y la fotografía"
+  },
   "Cards": {
     "Intro": {
       "Slides": {
