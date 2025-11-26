@@ -27,9 +27,7 @@ export default function TopArtists() {
   ) : (
     <div>
       {topArtists?.map((artist: any, index: number) => (
-        <div>
-          <div key={index}>{artist.name}</div>
-        </div>
+        <div key={index}>{artist.name}</div>
       ))}
     </div>
   );
