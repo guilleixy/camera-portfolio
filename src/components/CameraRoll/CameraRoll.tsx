@@ -80,7 +80,7 @@ export default function CameraRoll({ containerRef }: CameraRollProps) {
                 <div className={styles.imageWrapper} key={k}>
                   <img
                     alt="Camera Roll"
-                    src={`/images/camera_roll/${item.index}.jpg`}
+                    src={`/images/camera_roll/optimized/${item.index}.jpg`}
                     width={258 / 1.3}
                     height={194 / 1.3}
                     style={{
