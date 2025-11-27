@@ -36,115 +36,112 @@ const CameraModel: React.FC<{
   const { card, setCard } = useCardStore();
   const [slide, setSlide] = useState(0);
 
-  const handleButton1Click = (event: any) => {
-    event.stopPropagation();
+  const clickSoundRef = useRef<HTMLAudioElement>(null);
+  const openCameraSoundRef = useRef<HTMLAudioElement>(null);
+  const closeCameraSoundRef = useRef<HTMLAudioElement>(null);
+  const sdCardOutSoundRef = useRef<HTMLAudioElement>(null);
+  const sdCardInSoundRef = useRef<HTMLAudioElement>(null);
+
+  React.useEffect(() => {
+    clickSoundRef.current = new Audio("/sounds/button_click.mp3");
+    openCameraSoundRef.current = new Audio("/sounds/open_camera.mp3");
+    closeCameraSoundRef.current = new Audio("/sounds/close_camera.mp3");
+    sdCardOutSoundRef.current = new Audio("/sounds/out_sd.mp3");
+    sdCardInSoundRef.current = new Audio("/sounds/in_sd.mp3");
+    clickSoundRef.current.volume = 0.05;
+    if (openCameraSoundRef.current) openCameraSoundRef.current.volume = 0.03;
+    if (closeCameraSoundRef.current) closeCameraSoundRef.current.volume = 0.03;
+    if (sdCardOutSoundRef.current) sdCardOutSoundRef.current.volume = 0.03;
+    if (sdCardInSoundRef.current) sdCardInSoundRef.current.volume = 0.03;
+  }, []);
+  const playSound = (soundRef: React.RefObject<HTMLAudioElement | null>) => {
+    if (soundRef.current) {
+      soundRef.current.currentTime = 0;
+      soundRef.current.play().catch((err) => console.log("Audio error:", err));
+    }
+  };
+  const playClickSound = () => playSound(clickSoundRef);
+  const changeSDWithSounds = (newCard: number) => {
     setCard(5);
     cameraToggle("backZoomIn");
     cameraModelToggle("openCase");
+
+    // Sonido abrir cámara
+    playSound(openCameraSoundRef);
+
     setTimeout(() => {
+      // SD Card OUT
       sdCardToggle("changeSD");
+      playSound(sdCardOutSoundRef);
     }, 100);
+
     setTimeout(() => {
+      // SD Card IN
       sdCardToggle("changeSD");
+      playSound(sdCardInSoundRef);
     }, 600);
+
     setTimeout(() => {
+      // Cerrar cámara
       cameraModelToggle("openCase");
+      playSound(closeCameraSoundRef);
     }, 700);
+
     setTimeout(() => {
       cameraToggle("backZoomIn");
     }, 900);
+
     setTimeout(() => {
-      setCard(1);
+      setCard(newCard);
       setSlide(0);
     }, 1200);
+  };
+
+  const handleButton1Click = (event: any) => {
+    event.stopPropagation();
+    playClickSound();
+    changeSDWithSounds(1);
   };
 
   const handleButton2Click = (event: any) => {
     event.stopPropagation();
-    setCard(5);
-    cameraToggle("backZoomIn");
-    cameraModelToggle("openCase");
-    setTimeout(() => {
-      sdCardToggle("changeSD");
-    }, 100);
-    setTimeout(() => {
-      sdCardToggle("changeSD");
-    }, 600);
-    setTimeout(() => {
-      cameraModelToggle("openCase");
-    }, 700);
-    setTimeout(() => {
-      cameraToggle("backZoomIn");
-    }, 900);
-    setTimeout(() => {
-      setCard(2);
-      setSlide(0);
-    }, 1200);
+    playClickSound();
+    changeSDWithSounds(2);
   };
 
   const handleButton3Click = (event: any) => {
     event.stopPropagation();
-    setCard(5);
-    cameraToggle("backZoomIn");
-    cameraModelToggle("openCase");
-    setTimeout(() => {
-      sdCardToggle("changeSD");
-    }, 100);
-    setTimeout(() => {
-      sdCardToggle("changeSD");
-    }, 600);
-    setTimeout(() => {
-      cameraModelToggle("openCase");
-    }, 700);
-    setTimeout(() => {
-      cameraToggle("backZoomIn");
-    }, 900);
-    setTimeout(() => {
-      setCard(3);
-      setSlide(0);
-    }, 1200);
+    playClickSound();
+    changeSDWithSounds(3);
   };
 
   const handleButton4Click = (event: any) => {
     event.stopPropagation();
-    setCard(5);
-    cameraToggle("backZoomIn");
-    cameraModelToggle("openCase");
-    setTimeout(() => {
-      sdCardToggle("changeSD");
-    }, 100);
-    setTimeout(() => {
-      sdCardToggle("changeSD");
-    }, 600);
-    setTimeout(() => {
-      cameraModelToggle("openCase");
-    }, 700);
-    setTimeout(() => {
-      cameraToggle("backZoomIn");
-    }, 900);
-    setTimeout(() => {
-      setCard(4);
-      setSlide(0);
-    }, 1200);
+    playClickSound();
+    changeSDWithSounds(4);
   };
 
   const handleButtonUpClick = (event: any) => {
     event.stopPropagation();
+    playClickSound();
     slidesLengths[card] != slide + 1 && setSlide((prev) => prev + 1);
   };
 
   const handleLeftButtonClick = (event: any) => {
     event.stopPropagation();
+    playClickSound();
     slide !== 0 && setSlide((prev) => prev - 1);
   };
 
   const handleButtonRightClick = (event: any) => {
     event.stopPropagation();
+    playClickSound();
     slidesLengths[card] != slide + 1 && setSlide((prev) => prev + 1);
   };
 
   const handleButtonDownClick = (event: any) => {
     event.stopPropagation();
+    playClickSound();
     slide !== 0 && setSlide((prev) => prev - 1);
   };
 
