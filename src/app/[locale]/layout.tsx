@@ -32,8 +32,23 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.guille.be/"),
   title: "Guillermo Bernal",
   description: "Guillermo Bernal",
+  openGraph: {
+    title: "Guillermo Bernal",
+    description: "Guillermo Bernal - Developer Portfolio",
+    images: [
+      {
+        url: "/public/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Guillermo Bernal Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default async function RootLayout({
