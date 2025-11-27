@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: "Guillermo Bernal - Developer Portfolio",
     images: [
       {
-        url: "/public/images/og-image.jpg",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Guillermo Bernal Portfolio",
@@ -48,6 +48,12 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Guillermo Bernal",
+    description: "Guillermo Bernal - Developer Portfolio",
+    images: ["/images/og-image.jpg"],
   },
 };
 
