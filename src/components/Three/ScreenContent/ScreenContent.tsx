@@ -418,7 +418,7 @@ export function ScreenContent({
       ),
       1: (
         <article className={`${styles.squareImageSlide}`}>
-          <img src="/images/design/cartel_lleida.png" alt="" />
+          <img src="/images/design/cartel_lleida.jpg" alt="" />
           <div className={`${styles.snapchatBar}`}>
             {translations.cards2Slide1Text1}
           </div>
@@ -426,7 +426,7 @@ export function ScreenContent({
       ),
       2: (
         <article className={`${styles.squareImageSlide}`}>
-          <img src="/images/design/cartel_lleida2.png" alt="" />
+          <img src="/images/design/cartel_acoruña.jpg" alt="" />
           {/* <div className={`${styles.snapchatBar}`}>
             {translations.cards2Slide2Text1}
           </div> */}
@@ -434,7 +434,7 @@ export function ScreenContent({
       ),
       3: (
         <article className={`${styles.squareImageSlide}`}>
-          <img src="/images/design/cartel_gira.png" alt="" />
+          <img src="/images/design/cartel_gira.jpg" alt="" />
           {/* <div className={`${styles.snapchatBar}`}>
             {translations.cards2Slide3Text1}
           </div> */}
@@ -442,7 +442,7 @@ export function ScreenContent({
       ),
       4: (
         <article className={`${styles.squareImageSlide}`}>
-          <img src="/images/design/carretera_raw.png" alt="" />
+          <img src="/images/design/carretera_raw.jpg" alt="" />
           <div className={`${styles.snapchatBar}`}>
             {translations.cards2Slide4Text1}
           </div>
