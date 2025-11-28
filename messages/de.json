@@ -1,0 +1,145 @@
+{
+  "General": {
+    "startCTA": "klicke, um zu starten!",
+    "backButton": "geh zurück",
+    "timeIn": "Uhrzeit in Zaragoza:",
+    "about": "über mich",
+    "contact": "kontakt",
+    "resume": "lebenslauf"
+  },
+  "Contact": {},
+  "About": {
+    "textHTML": "Ich bin ein Entwickler mit starkem Fokus auf Design und sauberem Code.\n\nMeine Lieblingstechnologien sind NextJS und ThreeJS, aber ich habe auch mit vielen anderen Sprachen und Frameworks gearbeitet, darunter React, NodeJS und PHP.\n\nIch habe echte Erfahrung sowohl im Frontend- als auch im Backend-Development.\n\nAußerhalb des Codings mag ich Musik und Fotografie."
+  },
+  "Cards": {
+    "Intro": {
+      "Slides": {
+        "0": {
+          "presentation": "Hi! Ich bin Guille :)",
+          "controls": "Um zwischen den Folien zu wechseln, benutze die Pfeiltasten rechts."
+        },
+        "1": {
+          "controls": "Du kannst die SD-Karte mit den Tasten unter dem Bildschirm auswählen. Jede SD enthält verschiedene Dinge."
+        }
+      }
+    },
+    "0": {
+      "Slides": {
+        "0": {
+          "text": "Ich bin ein 23-jähriger Entwickler aus Zaragoza, Spanien"
+        },
+        "1": {
+          "text": "Ich studiere derzeit Informatik, während ich als Programmierer arbeite."
+        },
+        "2": {
+          "text": "Ich habe außerdem einen Technikerabschluss in Webentwicklung und viele Kurse absolviert, hauptsächlich über ML und UX."
+        },
+        "3": {
+          "text": "Meine andere Leidenschaft ist Kunst in jeder Form. Ich liebe Musik, Design und Fotografie (offensichtlich)."
+        },
+        "4": {
+          "text": "Damit du mich etwas besser kennenlernst, hier ist etwas von meinem Musikgeschmack!",
+          "lastPlayed": "Mein zuletzt gespielter Song:",
+          "obsession": "Meine aktuelle Obsession:"
+        },
+        "5": {
+          "text": "Und hier sind meine aktuellen Top-Künstler:"
+        },
+        "6": {
+          "text": "Ich mag auch Videospiele, und kürzlich habe ich gespielt:"
+        }
+      }
+    },
+    "1": {
+      "Slides": {
+        "0": {
+          "title": "Mein Web-Stack",
+          "text1": "Ich habe mit vielen Technologien gearbeitet, sowohl im Frontend als auch im Backend.",
+          "text2": "Aber meine Favoriten sind definitiv Three.js und Next.js",
+          "githubCTA": "Hier ist mein "
+        },
+        "1": {
+          "text1": "Ich interessiere mich auch sehr für ML und Programmierung im Allgemeinen.",
+          "text2": "Ich habe Erfahrung mit Python und lerne derzeit Rust."
+        },
+        "2": {
+          "text1": "Ich liebe Herausforderungen und wenn es einen Hackathon oder eine Jam gibt, bin ich dabei!",
+          "text2": "Hier sind einige der Projekte, an denen ich gearbeitet habe:"
+        },
+        "3": {
+          "text1": "In meinem letzten Hackathon habe ich an einem intelligenten Bewässerungssystem gearbeitet.",
+          "text2": "Wir trainierten ein neuronales Netz, um verschiedene Arten von Pflanzen zu erkennen."
+        },
+        "4": {
+          "text1": "Je nach spezifischen Pflanzenbedürfnissen sowie aktuellen Wetter- und Feuchtigkeitsbedingungen wurde die Pflanze mit genau der richtigen Menge Wasser versorgt.",
+          "text2": "Das war alles automatisch mit einem Arduino und einem Feuchtigkeitssensor – gesunde Pflanzen ohne manuelles Gießen!"
+        },
+        "5": {
+          "text1": "Wir haben auch eine Spielversion erstellt, bei der sich der Bewässerungsmechanismus auslöste, wenn man Fragen zur Umwelt richtig beantwortete.",
+          "text2": "Sozusagen wie Duolingo, aber mit Pflanzen!"
+        },
+        "6": {
+          "text": "Das Bewässerungssystem in Aktion!"
+        },
+        "7": {
+          "text": "Ich habe auch an einem Exoplaneten-Systemvisualisierer gearbeitet, der in der Lage ist, prozedural realistische Nachbildungen von von der NASA entdeckten Planeten und Sternen zu erzeugen."
+        },
+        "8": {
+          "text": "Wir entwickelten auch das, was wir die 'Musik der Sterne' nannten: ein Positionssoundsystem, bei dem jeder Himmelskörper je nach Masse und Temperatur einen eigenen Klang erzeugte."
+        },
+        "9": {
+          "text": "Wir haben es mit Godot gemacht, und der coolste Teil des Projekts war die Implementierung von VR!"
+        },
+        "10": {
+          "text": "Ohne Ton ist es nicht dasselbe!"
+        },
+        "11": {
+          "text1": "Eines meiner ersten 'großen' Projekte war Saight: eine App, die Menschen mit Sehbehinderungen hilft, mit ihrer Umgebung zu interagieren",
+          "text2": "Ich nutzte ein Computer-Vision-Modell, um Objekte in Echtzeit zu erkennen und den Nutzer per TTS zu informieren."
+        },
+        "12": {
+          "text": "Ich implementierte auch Sprachsteuerung und andere Funktionen wie Gesichtserkennung und die Verbindung zu einem LLM, das die erkannten Objekte als Kontext nutzte."
+        }
+      }
+    },
+    "2": {
+      "Slides": {
+        "0": {
+          "text1": "Neben dem Programmieren gestalte, animiere oder kreiere ich auch gern einfach irgendetwas.",
+          "text2": "Ich spiele Bass in einer Band und gestalte unsere Poster und Cover."
+        },
+        "1": {
+          "text": "einige Konzertposter!"
+        },
+        "2": {
+          "text": "einige Konzertposter!"
+        },
+        "3": {
+          "text": "unser erstes Tour-Poster!"
+        },
+        "4": {
+          "text": "ein Single-Cover"
+        },
+        "5": {
+          "text": "und sein Visualizer mit synchronisierter Bewegung"
+        }
+      }
+    },
+    "3": {
+      "Slides": {
+        "madrid2024": {
+          "text": "Madrid, Juli 2024"
+        },
+        "aCoruña2025": {
+          "text": "A Coruña, Februar 2025"
+        },
+        "barcelona2025": {
+          "text": "Barcelona, November 2025"
+        }
+      }
+    }
+  },
+  "LocaleSwitcher": {
+    "locale": "{locale, select, es {🇪🇸 Spanisch} en {🇺🇸 Englisch} other {Unbekannt}}"
+  }
+}
