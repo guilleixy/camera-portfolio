@@ -6,6 +6,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { LocaleProvider, useLanguage } from "../../context/LocaleContext";
+import { Analytics } from "@vercel/analytics/next";
 const clashDisplayFont = localFont({
   src: [
     {
@@ -73,7 +74,10 @@ export default async function RootLayout({
     <html>
       <body className={`${clashDisplayFont.variable} ${robotoMono.variable}`}>
         <NextIntlClientProvider>
-          <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+          <LocaleProvider initialLocale={locale}>
+            {children}
+            <Analytics />
+          </LocaleProvider>
         </NextIntlClientProvider>
       </body>
     </html>
