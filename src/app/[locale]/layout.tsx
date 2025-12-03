@@ -7,6 +7,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { LocaleProvider, useLanguage } from "../../context/LocaleContext";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const clashDisplayFont = localFont({
   src: [
     {
@@ -77,6 +79,7 @@ export default async function RootLayout({
           <LocaleProvider initialLocale={locale}>
             {children}
             <Analytics />
+            <SpeedInsights />
           </LocaleProvider>
         </NextIntlClientProvider>
       </body>
