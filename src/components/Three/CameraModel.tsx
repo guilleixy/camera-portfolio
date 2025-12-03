@@ -48,11 +48,11 @@ const CameraModel: React.FC<{
     closeCameraSoundRef.current = new Audio("/sounds/close_camera.mp3");
     sdCardOutSoundRef.current = new Audio("/sounds/out_sd.mp3");
     sdCardInSoundRef.current = new Audio("/sounds/in_sd.mp3");
-    clickSoundRef.current.volume = 0.05;
-    if (openCameraSoundRef.current) openCameraSoundRef.current.volume = 0.03;
-    if (closeCameraSoundRef.current) closeCameraSoundRef.current.volume = 0.03;
-    if (sdCardOutSoundRef.current) sdCardOutSoundRef.current.volume = 0.03;
-    if (sdCardInSoundRef.current) sdCardInSoundRef.current.volume = 0.03;
+    clickSoundRef.current.volume = 0.3;
+    if (openCameraSoundRef.current) openCameraSoundRef.current.volume = 0.2;
+    if (closeCameraSoundRef.current) closeCameraSoundRef.current.volume = 0.2;
+    if (sdCardOutSoundRef.current) sdCardOutSoundRef.current.volume = 0.2;
+    if (sdCardInSoundRef.current) sdCardInSoundRef.current.volume = 0.2;
   }, []);
   const playSound = (soundRef: React.RefObject<HTMLAudioElement | null>) => {
     if (soundRef.current) {
