@@ -69,7 +69,8 @@ const Scene = forwardRef<HTMLDivElement, {}>((props, ref) => {
         <Suspense fallback={null}>
           <Camera />
           <Environment
-            preset="city"
+            //preset="city"
+            files="/models/potsdamer_platz_1k.hdr"
             backgroundIntensity={0}
             environmentIntensity={0.7}
           />
