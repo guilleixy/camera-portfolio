@@ -18,6 +18,8 @@
     "gsap": "^3.13.0",
     "next": "15.5.7",
     "next-intl": "^4.3.12",
+    "nextra": "^4.6.1",
+    "nextra-theme-blog": "^4.6.1",
     "react": "19.1.2",
     "react-dom": "19.1.2",
     "react-loading-skeleton": "^3.5.0",
