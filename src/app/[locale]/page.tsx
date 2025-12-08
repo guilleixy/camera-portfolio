@@ -121,7 +121,7 @@ export default function Home() {
           <div className={styles.links}>
             <LocaleSwitcher />
             <a
-              href="/GuillermoBernalResume04122025.pdf"
+              href="/GuillermoBernalResume27112025.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
