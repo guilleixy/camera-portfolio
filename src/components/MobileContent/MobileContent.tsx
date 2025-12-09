@@ -51,7 +51,7 @@ export default function MobileContent() {
         </li>
         <li>
           <a
-            href="/GuillermoBernalResume27112025.pdf"
+            href="/GuillermoBernalResume04122025.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
