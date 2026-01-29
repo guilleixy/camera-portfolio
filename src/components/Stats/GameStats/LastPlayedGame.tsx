@@ -2,6 +2,15 @@ import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
+const fallbackGames = [
+  {
+    name: "Replicube",
+  },
+  {
+    name: "Blasphemous 2",
+  },
+];
+
 export default function LastPlayedGame() {
   const [loading, setLoading] = useState<boolean>(true);
   const [lastPlayedGame, setLastPlayedGame] = useState<any>(null);
@@ -12,7 +21,12 @@ export default function LastPlayedGame() {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      setLastPlayedGame(data.response.games);
+
+      if (data.response.total_count == 0) {
+        setLastPlayedGame(fallbackGames);
+      } else {
+        setLastPlayedGame(data.response.games);
+      }
     } catch (error) {
     } finally {
       setLoading(false);
