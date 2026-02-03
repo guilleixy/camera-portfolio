@@ -466,7 +466,7 @@ export function ScreenContent({
       ),
       7: (
         <article className={`${styles.squareImageSlide}`}>
-          <video src="/images/design/canvas_carretera.mp4" autoPlay loop />
+          <video src="/images/design/sample_despersona.mp4" autoPlay loop />
         </article>
       ),
     },
