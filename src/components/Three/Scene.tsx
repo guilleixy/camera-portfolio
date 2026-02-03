@@ -59,6 +59,7 @@ const Scene = forwardRef<HTMLDivElement, {}>((props, ref) => {
     cards2Slide3Text1: t("2.Slides.3.text"),
     cards2Slide4Text1: t("2.Slides.4.text"),
     cards2Slide5Text1: t("2.Slides.5.text"),
+    cards2Slide6Text1: t("2.Slides.6.text"),
     cards3Madrid2024: t("3.Slides.madrid2024.text"),
     cards3ACoruña2025: t("3.Slides.aCoruña2025.text"),
     cards3Barcelona2025: t("3.Slides.barcelona2025.text"),

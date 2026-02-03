@@ -8,7 +8,7 @@ import { ScreenContent } from "./ScreenContent/ScreenContent";
 import { useSDCardModelStore } from "@/store/useSDCardModelStore";
 import { useCameraStore } from "@/store/useCameraStore";
 import { useCardStore } from "@/store/useCardStore";
-export const slidesLengths: Array<number> = [2, 7, 13, 6, 10];
+export const slidesLengths: Array<number> = [2, 7, 13, 8, 10];
 const CameraModel: React.FC<{
   translations: any;
 }> = ({ translations }) => {

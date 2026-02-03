@@ -456,6 +456,19 @@ export function ScreenContent({
           </div>
         </article>
       ),
+      6: (
+        <article className={`${styles.squareImageSlide}`}>
+          <img src="/images/design/despersona.jpg" alt="" />
+          <div className={`${styles.snapchatBar}`}>
+            {translations.cards2Slide6Text1}
+          </div>
+        </article>
+      ),
+      7: (
+        <article className={`${styles.squareImageSlide}`}>
+          <video src="/images/design/canvas_carretera.mp4" autoPlay loop />
+        </article>
+      ),
     },
     4: {
       0: (
